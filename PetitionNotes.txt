@@ -1,0 +1,21 @@
+Petition Part1:
+
+create 3 different pages
+3 different handlebars
+arrange the folders, views, public like the handlebar class notes.
+
+The first page:
+
+1) the petition text
+2) user input 3 feilds, first name , last name and signature (hidden)(type hidden)
+3) draw on the canvas, capture the url signature and set that url as a value to the hidden input feild and then send it to ther server using an attribute called name.
+signature CANVAS (lives in public folder > script.js): mouse down , line should be drawn and follows the mouse direction(mouse move). when the mouse is up it should stop drawing (event listener)
+4) a url is generated and it represents the signature and to see waht the url is we have to call a function called todataurl which is a mthod of canvas.
+5) Once you have theat url, we need to set this url as the value of an input feild(use > .val) (the 3rd input frild of the first page and it will be hidden)thi is how to capture what the signature was on the canvas once the user clicks submit.
+6) if there is an erroe, the page should rerender and the error msg should appear. 
+7) if there in no error then we should set a cookie here to remember specific information about the user specifically that the user has signed
+8) then direct them to the next page, the thank you page so we have to check for the cookies here and if this user didnt sign then we have to take them back to the register page .
+9) and whenever they click the number of signer, they should be directed to the signers page to see everyone who signed so far (another database query).(creat a layout???)
+10) wrap everything in the first page in a form with a method post request.
+
+** unsplash.com & pexels.com for images , make sue to download in small size not the default size.

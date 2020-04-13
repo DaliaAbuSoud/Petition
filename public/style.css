@@ -1,0 +1,276 @@
+/*************HOME**************/
+.home-body {
+    background-image: url(./assets/12.jpg);
+    height: 100vh;
+    background-color: rgb(22, 65, 65);
+    background-blend-mode: screen;
+}
+.home-wrapper {
+    background-color: rgb(0, 0, 0, 0.4);
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    color: rgb(255, 255, 245);
+    display: grid;
+    grid-template-columns: 45% 12% 1fr;
+    grid-template-rows: 12% 10% 1fr 3%;
+    height: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+.home-header {
+    font-size: 52px;
+    margin: 30px 0 0 20px;
+    grid-area: 1 / 1 / 2 / 2;
+    align-self: center;
+}
+.total-supporters {
+    grid-area: 1 / 3 / 2 / 4;
+    font-style: italic;
+    color: rgb(133, 195, 195);
+    font-size: 18px;
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin-right: 100px;
+    cursor: pointer;
+}
+.the-story {
+    margin: 0;
+    margin-left: 20px;
+    font-size: 34px;
+    font-style: italic;
+    grid-area: 2 / 1 / 3 / 2;
+    align-self: center;
+}
+.text-section {
+    margin: 0;
+    margin-left: 20px;
+    grid-area: 3 / 1 / 4 / 2;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: justify;
+    align-self: flex-start;
+}
+
+.conclusion {
+    font-size: 26px;
+    font-style: italic;
+    align-self: center;
+    margin: 20px 0 20px 0;
+}
+
+.sign-this {
+    font-size: 26px;
+    font-style: italic;
+    grid-area: 2 / 3 / 3/ 4;
+    align-self: center;
+    margin-right: 100px;
+}
+.registration-section {
+    grid-area: 3 / 3 / 4/ 4;
+    align-self: flex-start;
+}
+
+.input-fields {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 15% 1fr;
+    margin: 20px 100px 20px 0;
+    align-items: flex-end;
+}
+.userInput {
+    height: 30px;
+    background-color: transparent;
+    padding: 3px 10px 3px 10px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border: none;
+    border-bottom: 1px solid ivory;
+    margin: 10px 0 0 30px;
+}
+.signature-text {
+    align-self: center;
+}
+.canvas-wrapper {
+    margin-right: 30px;
+}
+.sig-canvas {
+    margin: 20px 0 0 30px;
+    height: 160px;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.4);
+    font-size: 16px;
+    cursor: url("/assets/pen-icon-s.png"), auto;
+}
+.empty-canvas {
+    display: none;
+}
+
+.errorMsg {
+    font-size: 18px;
+    color: white;
+    background-color: rgb(109, 1, 1);
+    font-style: italic;
+    margin: 5px 0 5px 30px;
+    grid-column: 2 / 3;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    display: none;
+}
+
+.errorMsg.on {
+    display: flex;
+}
+
+.buttons {
+    grid-column-start: 2;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+.submit-button {
+    margin: 20px 0 0 30px;
+    height: 40px;
+    width: 150px;
+    background-color: rgba(22, 107, 96, 0.192);
+    justify-content: flex-start;
+    grid-column-start: 1;
+    align-items: flex-end;
+    font-size: 18px;
+    color: rgb(133, 195, 195);
+    text-decoration: none;
+}
+
+.clear-sig {
+    margin: 20px 0 0 30px;
+    height: 40px;
+    width: 150px;
+    background-color: rgba(22, 107, 96, 0.192);
+    grid-column-start: 2;
+    font-size: 18px;
+    color: rgb(133, 195, 195);
+    cursor: pointer;
+}
+
+footer {
+    grid-area: 4 / 1 / 5/ 4;
+    background: rgba(255, 255, 255, 0.3);
+    font-size: 13px;
+    color: rgb(179, 179, 177);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+.footer-text {
+    margin-left: 10px;
+    color: black;
+}
+
+/*************THANK-YOU**************/
+
+.thanks-body {
+    background-image: url(./assets/thankyou1.jpg);
+    height: 100vh;
+    background-color: rgb(22, 65, 65);
+    background-blend-mode: screen;
+}
+.thanks-wrapper {
+    background-color: rgb(0, 0, 0, 0.4);
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 30% 1fr 3%;
+    color: rgb(0, 49, 49);
+}
+.home-button {
+    height: 60px;
+    width: 60px;
+    margin-top: 5px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+.home-button img {
+    height: 40px;
+    width: 40px;
+    justify-self: flex-start;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.thanks-section {
+    margin-left: 30px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    align-self: end;
+}
+.successfully-signed {
+    font-size: 36px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.thanks-msg {
+    font-size: 32px;
+    font-style: italic;
+}
+
+.signers {
+    margin: 40px 0 0 30px;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    font-size: 26px;
+}
+
+.clickHere a {
+    font-style: italic;
+    color: rgb(141, 197, 197);
+    cursor: pointer;
+}
+
+/*************signers**************/
+
+.signers-body {
+    background-image: url(./assets/background1.jpg);
+    height: 100%;
+    background-color: rgb(11, 46, 46);
+    background-blend-mode: screen;
+}
+.signers-wrapper {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 15% 1fr 3%;
+    grid-template-columns: auto;
+}
+.supporters-list {
+    margin-top: 40px;
+    margin-left: 50px;
+    font-size: 42px;
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(1, 66, 66);
+    grid-area: 2 / 1 / 3 /2;
+}
+.li {
+    line-height: 1.7;
+    margin-left: 50px;
+    font-size: 18px;
+    color: rgb(1, 66, 66);
+    grid-area: 3 / 1 / 4 /2;
+    /* align-items: flex-start; */
+}
+/* .li a {
+    font-style: italic;
+    color: rgb(6, 138, 138);
+    cursor: pointer;
+} */

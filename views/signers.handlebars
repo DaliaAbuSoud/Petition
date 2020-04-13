@@ -1,0 +1,20 @@
+<div class="signers-body">
+    
+    <section class="signers-wrapper">
+        
+    <a class="home-button" href="/petition">
+        <img src="/assets/home-run.png" alt="home-button-image">
+    </a>
+    
+    <h1 class="supporters-list">Supporters List</h1>
+    
+    <br>
+    <ol class="li">
+        {{#signersData}}
+        <li><strong>{{firstname}} {{lastname}},   {{city}} - {{country}}</strong>/ Signed on {{dateFormat ts "MMMM Do YYYY"}}</li>
+        {{/signersData}}
+    </ol>
+    <footer><p class="footer-text">© 2020  Dalia Abu-Soud</p></footer>  
+    
+    </section>
+</div>
