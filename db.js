@@ -18,10 +18,20 @@ module.exports.addUserData = (
     country,
     signatureUrl
 ) => {
-    return db.query(
+    let dbtest = db.query(
         `
     INSERT INTO userdata (firstName, lastName, city, country, signatureUrl)
-    VALUES ($1, $2, $3, $4, $5)`,
+    VALUES ($1, $2, $3, $4, $5) RETURNING id`,
         [firstName, lastName, city, country, signatureUrl]
     );
+    console.log("DBTEST:", dbtest);
+    return dbtest;
+};
+
+module.exports.getSignature = (id) => {
+    return db
+        .query(`SELECT signatureUrl FROM userdata WHERE id=${id};`)
+        .then((result) => {
+            return result.rows[0].signatureUrl;
+        });
 };

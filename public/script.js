@@ -18,6 +18,7 @@ eSignature = () => {
     canvas.addEventListener("mousedown", (event) => {
         sign = true;
         prevPosition = getMousePos(canvas, event);
+        // console.log("prevPosition: ", prevPosition);
     });
 
     canvas.addEventListener("mousemove", (event) => {
@@ -30,6 +31,8 @@ eSignature = () => {
 
     getMousePos = (canvasDom, mouseEvent) => {
         let rect = canvasDom.getBoundingClientRect();
+        // console.log("RECT: ", rect);
+
         return {
             x: mouseEvent.clientX - rect.left,
             y: mouseEvent.clientY - rect.top,

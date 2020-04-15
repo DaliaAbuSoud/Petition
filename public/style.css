@@ -11,7 +11,7 @@
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     color: rgb(255, 255, 245);
     display: grid;
-    grid-template-columns: 45% 12% 1fr;
+    grid-template-columns: 45% 12% 1fr 12%;
     grid-template-rows: 12% 10% 1fr 3%;
     height: 100%;
 }
@@ -66,7 +66,6 @@ p {
     font-style: italic;
     grid-area: 2 / 3 / 3/ 4;
     align-self: center;
-    margin-right: 100px;
 }
 .registration-section {
     grid-area: 3 / 3 / 4/ 4;
@@ -77,7 +76,7 @@ p {
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: 15% 1fr;
-    margin: 20px 100px 20px 0;
+    margin: 20px 0px 20px 0;
     align-items: flex-end;
 }
 .userInput {
@@ -89,18 +88,18 @@ p {
     font-weight: bold;
     border: none;
     border-bottom: 1px solid ivory;
-    margin: 10px 0 0 30px;
+    margin: 10px 25px 0 30px;
 }
 .signature-text {
     align-self: center;
 }
 .canvas-wrapper {
-    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    margin: 20px 25px 0 30px;
 }
 .sig-canvas {
-    margin: 20px 0 0 30px;
     height: 160px;
-    width: 100%;
     background-color: rgb(255, 255, 255, 0.4);
     font-size: 16px;
     cursor: url("/assets/pen-icon-s.png"), auto;
@@ -131,9 +130,9 @@ p {
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
+    margin: 20px 25px 0 30px;
 }
 .submit-button {
-    margin: 20px 0 0 30px;
     height: 40px;
     width: 150px;
     background-color: rgba(22, 107, 96, 0.192);
@@ -146,7 +145,6 @@ p {
 }
 
 .clear-sig {
-    margin: 20px 0 0 30px;
     height: 40px;
     width: 150px;
     background-color: rgba(22, 107, 96, 0.192);
@@ -274,3 +272,8 @@ footer {
     color: rgb(6, 138, 138);
     cursor: pointer;
 } */
+
+/************* Responsive **************/
+
+@media only screen and (max-width: 768px) {
+}

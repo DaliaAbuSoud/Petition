@@ -19,3 +19,33 @@ signature CANVAS (lives in public folder > script.js): mouse down , line should 
 10) wrap everything in the first page in a form with a method post request.
 
 ** unsplash.com & pexels.com for images , make sue to download in small size not the default size.
+
+
+const cookieSession = require("cookie-session");
+
+/Set MiddleWare
+
+app.use(
+    cookieSession({
+        secret: "I/m always angry",
+        maxAge: 1000 * 60 * 60 * 14 * 14, //cookies set for 2 weeks
+    })
+);
+
+app.get("/", (req, res) => {
+    console.log("GET Request made to the root route");
+    console.log("Session Cookie, when first created", req.session);
+    req.session.msg = "bigSecret99";
+    req.session.permisiion = true;
+    console.log("Session Cookie, after value is set", req.session);
+    res.redirect("/petition");
+});
+
+app.get("/petition", (req, res) => {
+    const { msg, permission } = req.session;
+    if (msg === "bigSecret99" && permission) {
+        res.render("home");
+    } else {
+    }
+    res.render(`<h1>Permisiion Deneid!!!</h1>`);
+});
