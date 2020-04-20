@@ -1,7 +1,13 @@
 // *********** E-Signature *************
 
 eSignature = () => {
+    const canvasWrapper = document.querySelector(".canvas-wrapper");
     const canvas = document.querySelector(".sig-canvas");
+    const emptyCanvas = document.querySelector(".empty-canvas");
+    let canvasWrapperWidth = canvasWrapper.offsetWidth;
+    emptyCanvas.width = canvasWrapperWidth;
+    canvas.width = canvasWrapperWidth;
+
     const ctx = canvas.getContext("2d");
 
     ctx.strokeStyle = "black";
@@ -118,49 +124,174 @@ eSignature = () => {
     });
 };
 
-// *********** User Input Data *************
+// *********** SignUp UserInput *************
 
-userInputData = () => {
-    const sigCanvas = document.querySelector(".sig-canvas");
-    const submitForm = document.querySelector(".input-fields");
-    const userInput = document.querySelectorAll(".userInput");
-    const emptyCanvas = document.querySelector(".empty-canvas");
-    const errorMsg = document.querySelector(".errorMsg");
+signUpUserInput = () => {
+    const signUpForm = document.querySelector(".signUp-input-fields");
+    const signUpUserInput = document.querySelectorAll(".signUp-UserInput");
 
-    submitForm.addEventListener("submit", (event) => {
+    signUpForm.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        const firstName = userInput[0].value;
-        const lastName = userInput[1].value;
-        const city = userInput[2].value;
-        const country = userInput[3].value;
-        let signatureUrl = sigCanvas.toDataURL();
-        let emptyCanvasUrl = emptyCanvas.toDataURL();
-
-        console.log("firstName:", firstName);
-        console.log("lastName:", lastName);
-        console.log("city:", city);
-        console.log("country:", country);
-
-        if (signatureUrl == emptyCanvasUrl) {
-            errorMsg.classList.add("on");
-        } else {
-            console.log("signatureUrl:", signatureUrl);
+        const firstName = signUpUserInput[0].value;
+        const lastName = signUpUserInput[1].value;
+        const email = signUpUserInput[2].value;
+        const password = signUpUserInput[3].value;
+        const emailExsists = document.querySelector(".emailExsists");
+        const orLine = document.querySelector(".or");
+        const alreadyAMember = document.querySelector(".alreadyAMember");
+        if (
+            firstName !== "" &&
+            lastName !== "" &&
+            email !== "" &&
+            password !== ""
+        ) {
+            console.log(firstName, lastName, email, password);
             $.ajax({
-                url: "/petition",
+                url: "/signup-api",
                 method: "POST",
                 data: {
                     firstName: firstName,
                     lastName: lastName,
-                    city: city,
-                    country: country,
-                    signatureUrl: signatureUrl,
+                    email: email,
+                    password: password,
                 },
 
+                success: (response) => {
+                    console.log("RESPONSE", response);
+                    window.location.href = "/login";
+                },
+
+                error: (err) => {
+                    alreadyAMember.classList.add("off");
+                    emailExsists.classList.add("on");
+                    orLine.classList.add("off");
+                    console.log(err);
+                },
+            });
+        }
+    });
+};
+
+// *********** LogIn UserInput ***************
+
+logInUserInput = () => {
+    const logInForm = document.querySelector(".logIn-input-fields");
+    const logInUserInput = document.querySelectorAll(".logIn-UserInput");
+
+    logInForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const email = logInUserInput[0].value;
+        const password = logInUserInput[1].value;
+        console.log("EMAIL :", email);
+        console.log("PASSWORD: ", password);
+        const wrongPass = document.querySelector(".incorrectPass");
+
+        if (email !== "" && password !== "") {
+            $.ajax({
+                url: "/login-api",
+                method: "POST",
+                data: {
+                    email: email,
+                    password: password,
+                },
+                success: (response) => {
+                    window.location.href = "/petition";
+                },
+                error: (err) => {
+                    wrongPass.textContent = err.responseJSON.message;
+                    wrongPass.classList.add("on");
+                    console.log(err);
+                },
+            });
+        }
+    });
+};
+
+// *********** Petition Signature ***************
+
+userSignature = () => {
+    const submitSig = document.querySelector(".submit-button");
+    const sigCanvas = document.querySelector(".sig-canvas");
+    const emptyCanvas = document.querySelector(".empty-canvas");
+    const errorMsg = document.querySelector(".errorMsg");
+
+    submitSig.addEventListener("click", (event) => {
+        event.preventDefault();
+        console.log("TTTTEEEESSSSSSSST");
+
+        const signatureUrl = sigCanvas.toDataURL();
+        const emptyCanvasUrl = emptyCanvas.toDataURL();
+
+        console.log("SIGURL:", signatureUrl);
+        console.log("EMPTY CANVAS:", emptyCanvasUrl);
+        console.log("URL COMPARE: ", signatureUrl === emptyCanvasUrl);
+
+        if (signatureUrl == emptyCanvasUrl) {
+            errorMsg.classList.add("on");
+        } else {
+            $.ajax({
+                url: "/petition-api",
+                method: "POST",
+                data: {
+                    signatureUrl: signatureUrl,
+                },
                 success: (response) => {
                     window.location.href = "/thanks";
                 },
             });
         }
+    });
+};
+
+// *********** Edit User Profile ***************
+editUserProfile = () => {
+    const editProfile = document.querySelector(".editProfileBtn");
+    const editProfileForm = document.querySelector(".userProfile-InputFields");
+    const submitBtn = document.querySelector(".editProfileBtn");
+
+    console.log("editProfile: ", editProfile);
+
+    editProfile.addEventListener("click", (event) => {
+        const profileInput = document.querySelectorAll(".profileUserInput");
+
+        profileInput.forEach((element) => {
+            element.disabled = false;
+        });
+    });
+
+    editProfileForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        console.log(event);
+        const elementsList = event.srcElement.elements;
+
+        const dataToSend = {
+            firstName: document.querySelector('input[name="firstName"]').value,
+            lastName: document.querySelector('input[name="lastName"]').value,
+            password: document.querySelector('input[name="password"]').value,
+            city: document.querySelector('input[name="city"]').value,
+            country: document.querySelector('input[name="country"]').value,
+            age: document.querySelector('input[name="age"]').value,
+        };
+
+        console.log(dataToSend);
+        const successMsg = document.querySelector(".profileUpdated");
+        const failureMsg = document.querySelector(".profileFailed");
+
+        $.ajax({
+            url: "/userprofile",
+            method: "POST",
+            data: dataToSend,
+            success: (response) => {
+                console.log(response);
+                successMsg.textContent = response.message;
+                successMsg.classList.add("on");
+            },
+            error: (err) => {
+                failureMsg.textContent = response.responseJSON.message;
+                failureMsg.classList.add("on");
+            },
+        });
     });
 };

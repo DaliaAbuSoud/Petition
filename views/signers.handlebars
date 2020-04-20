@@ -1,20 +1,32 @@
 <div class="signers-body">
     
-    <section class="signers-wrapper">
-        
-    <a class="home-button" href="/petition">
-        <img src="/assets/home-run.png" alt="home-button-image">
-    </a>
-    
-    <h1 class="supporters-list">Supporters List</h1>
-    
-    <br>
-    <ol class="li">
+        <div class="signers-menu-line">
+            <a  href="signup" class="signers-home-button">
+            <img src="/assets/home-btn.png" alt="home-button-image"></a>
+            <p class="surfLinks">
+                <a href="/logout">Logout</a> <br>
+                <a href="/petition">Petition</a>
+            </p>
+
+        </div>
+
+    <h1 class="supporters-list">Our Supporters List</h1> 
+
+    <section class="signers-wrapper" >
+       
+        <
+        <ol class="signersTable">
         {{#signersData}}
-        <li><strong>{{firstname}} {{lastname}},   {{city}} - {{country}}</strong>/ Signed on {{dateFormat ts "MMMM Do YYYY"}}</li>
+        <li>
+            <div class="li">
+                <p class="name">{{firstname}} {{lastname}}</p>  
+                <p class="city">{{city}}</p> 
+                <p class="country">{{country}}</p>
+                <p class="dataAndTime">Signed on {{dateFormat ts "MMMM Do YYYY"}}</p>
+            </div>
+        </li>
         {{/signersData}}
     </ol>
-    <footer><p class="footer-text">© 2020  Dalia Abu-Soud</p></footer>  
-    
     </section>
+    <footer class="signersFooter"><p class="footer-text">© 2020  Dalia Abu-Soud</p></footer>  
 </div>

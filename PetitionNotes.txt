@@ -44,7 +44,7 @@ app.get("/", (req, res) => {
 app.get("/petition", (req, res) => {
     const { msg, permission } = req.session;
     if (msg === "bigSecret99" && permission) {
-        res.render("home");
+        res.render("signup");
     } else {
     }
     res.render(`<h1>Permisiion Deneid!!!</h1>`);

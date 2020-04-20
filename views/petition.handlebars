@@ -1,0 +1,73 @@
+<div class="petition-body">
+
+    <section class="petition-wrapper">
+        <div class="petition-menu-line">
+            <a  href="signup" class="petition-home-button">
+            <img src="/assets/home-btn black.png" alt="home-button-image"></a>
+            <a href="/logout" class="petition-logoutBtn" >Logout</a>
+        </div>
+        
+
+        <section class="text-section">
+            <p class="The-Story"> The Story...</p>
+            <p>Dalia Abu-Soud, 35 years old finance expert who moved from Jordan to Berlin in 2017.
+            Due to language barrier, it was hard for Dalia to get a job in finance. In 2020, Dalia decieded not to stop
+            and give up, but to dump finance and start all over again. She then enrolled in a web development bootcamp. 
+            Due to the lack of her previous tech knowlage, Dalia had to put extra effort to be able to graduate and become 
+            a good web developer.<br>
+            On her 3rd week in this bootcamp, and for the purpose of better understanding and extra practice, Dalia watched
+            a YouTube programing video while solving one of the daily excersises. She coded along, learned extra methods & 
+            finally added more code form what she have learned in class.
+            Unfortunately, some days later, Dalia was accused of commiting frogery in copying code and was banned from getting
+            a graduation certificate. 
+            </p>
+            <p class="conclusion">Support all Women & Men who are, at least, trying...</p>
+
+        </section>
+
+        {{#unless sigAvailable}}
+        <section class="signature-section">    
+            <p class="sign-this">Sign this Petition if you think Dalia should be given a certificate!</p>
+
+            <form class="sigForm">
+                <div class="canvas-wrapper">
+                    <canvas class="sig-canvas">
+                        <input type="image" name="sigImage" class="signatureUrl" required>
+                    </canvas>
+                
+                    <canvas class="empty-canvas"></canvas>
+                </div>
+            
+                <div class="errorMsg"> Please Sign Here!</div>
+
+                <div class="buttons">   
+                    <button type="submit" class="submit-button">Submit</button>
+                    <button type="clear-sig" class="clear-sig">Clear Signature</button>
+                </div>      
+            </form>
+        </section>
+        {{/unless}}
+
+        {{#if sigAvailable}}
+        <section class="alreadySigned">
+            <div class="helloUser"> 
+                <p> Welcome Back {{firstName}}!<p/> 
+            </div>
+            <p>You have signed this petition on: <br>{{dateFormat ts "MMMM Do YYYY"}}</p>
+            <p><strong>{{usersCount}}</strong> supporters have signed along! </p>
+            <p class="seeAllSigners"> Click <a href="/signers">here</a> to see all supporters</p>
+            <p class="unSign-editProfile">____<a herf="">Un-Sign</a>___<a href="./userProfile">Edit Profile</a>____</p>
+        </section>
+        {{/if}}
+
+    </section>
+
+
+    <footer><p class="footer-text">© 2020  Dalia Abu-Soud</p></footer>  
+    </section> 
+</div>
+
+<script>
+    eSignature(); 
+    userSignature()
+</script>

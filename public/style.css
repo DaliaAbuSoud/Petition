@@ -1,18 +1,26 @@
-/*************HOME**************/
-.home-body {
-    background-image: url(./assets/12.jpg);
-    height: 100vh;
-    background-color: rgb(22, 65, 65);
-    background-blend-mode: screen;
-}
-.home-wrapper {
-    background-color: rgb(0, 0, 0, 0.4);
+/*************SignUp**************/
+body {
     margin: 0;
+}
+.signup-body {
+    background-image: url(./assets/climb1.jpg);
+    height: 100vh;
+    background-blend-mode: screen;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: 20px 1fr 30px;
+}
+
+.signup-wrapper {
+    grid-area: 2/1/3/2;
+    background-color: rgba(0, 0, 0, 0.527);
+    border-radius: 25px;
+    margin: 0 0 30px 40px;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     color: rgb(255, 255, 245);
     display: grid;
-    grid-template-columns: 45% 12% 1fr 12%;
-    grid-template-rows: 12% 10% 1fr 3%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 16% 10% 1fr 30px;
     height: 100%;
 }
 
@@ -20,66 +28,187 @@ p {
     margin: 0;
 }
 
-.home-header {
+.signup-header {
     font-size: 52px;
-    margin: 30px 0 0 20px;
+    margin: 50px 0 0 0;
     grid-area: 1 / 1 / 2 / 2;
+    text-align: center;
+}
+
+.purpose {
+    margin: 40px 30px 0 30px;
+    font-size: 26px;
+    font-style: italic;
     align-self: center;
-}
-.total-supporters {
-    grid-area: 1 / 3 / 2 / 4;
-    font-style: italic;
-    color: rgb(133, 195, 195);
-    font-size: 18px;
-    align-self: flex-end;
-    justify-self: flex-end;
-    margin-right: 100px;
-    cursor: pointer;
-}
-.the-story {
-    margin: 0;
-    margin-left: 20px;
-    font-size: 34px;
-    font-style: italic;
     grid-area: 2 / 1 / 3 / 2;
-    align-self: center;
-}
-.text-section {
-    margin: 0;
-    margin-left: 20px;
-    grid-area: 3 / 1 / 4 / 2;
-    font-size: 20px;
-    line-height: 1.5;
-    text-align: justify;
-    align-self: flex-start;
+    text-align: center;
 }
 
-.conclusion {
-    font-size: 26px;
-    font-style: italic;
-    align-self: center;
-    margin: 20px 0 20px 0;
-}
-
-.sign-this {
-    font-size: 26px;
-    font-style: italic;
-    grid-area: 2 / 3 / 3/ 4;
-    align-self: center;
-}
 .registration-section {
-    grid-area: 3 / 3 / 4/ 4;
-    align-self: flex-start;
+    grid-area: 3 / 1 / 4/ 2;
+    align-items: center;
+    margin: 20px 30px 0 30px;
 }
 
-.input-fields {
+.signUp-input-fields {
     display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 15% 1fr;
-    margin: 20px 0px 20px 0;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-columns: 20% 1fr;
+    margin: 20px 0px 0px 0;
     align-items: flex-end;
 }
-.userInput {
+.signUp-UserInput {
+    height: 30px;
+    background-color: transparent;
+    padding: 3px 10px 3px 10px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-bottom: 1px solid ivory;
+    margin: 10px 30px 0 30px;
+}
+
+.signUpWrapper {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
+}
+
+.signUp {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    height: 40px;
+    width: 150px;
+    background-color: rgba(26, 27, 27, 0.3);
+    font-size: 18px;
+    color: rgb(181, 192, 192);
+    text-decoration: none;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-self: center;
+    border-radius: 10px;
+    transition: background-color 0.25s ease-in-out;
+    cursor: pointer;
+}
+.signUp:hover {
+    background-color: rgba(28, 88, 73, 0.452);
+
+    color: white;
+}
+
+.or {
+    text-align: center;
+    display: block;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.or.off {
+    display: none;
+    background-color: red;
+}
+
+.emailExsists {
+    font-size: 18px;
+    color: white;
+    background-color: rgba(109, 1, 1, 0.698);
+    font-style: italic;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 45px;
+    margin-top: 35px;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: none;
+}
+
+.emailExsists.on {
+    display: flex;
+}
+
+.orlogInSection {
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 15px;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+.logInLink {
+    font-size: 26px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    color: rgb(255, 255, 245);
+}
+.alreadyAMember {
+    display: block;
+}
+.alreadyAMember.off {
+    display: none;
+}
+
+footer {
+    grid-area: 4 / 1 / 5/ 5;
+    background: rgba(20, 20, 20, 0.294);
+    font-size: 13px;
+    color: rgba(39, 39, 39, 0.63);
+    margin: 0;
+    padding: 3px 0 3px 0;
+    display: flex;
+    align-items: center;
+}
+.footer-text {
+    margin-left: 10px;
+    color: black;
+}
+
+/*************Log-In**************/
+.logInBody {
+    background-image: url(./assets/login2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logInWrapper {
+    background-color: rgb(0, 0, 0, 0.5);
+    background-blend-mode: screen;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    color: rgb(255, 255, 245);
+    display: grid;
+    grid-template-columns: 45% 30% 1fr;
+    grid-template-rows: 45% auto 1fr 30px;
+    height: 100vh;
+}
+
+h2 {
+    grid-area: 2 / 2 / 3 / 3;
+    margin: 0;
+    padding-bottom: 10px;
+    align-items: flex-end;
+    font-style: italic;
+}
+.logInSection {
+    grid-area: 3 / 2 / 4 / 3;
+    align-items: center;
+}
+.logIn-input-fields {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 20% 1fr;
+    color: ivory;
+}
+
+label {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    font-size: 18px;
+    align-self: flex-end;
+}
+.logIn-UserInput {
     height: 30px;
     background-color: transparent;
     padding: 3px 10px 3px 10px;
@@ -89,20 +218,161 @@ p {
     border: none;
     border-bottom: 1px solid ivory;
     margin: 10px 25px 0 30px;
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
-.signature-text {
+
+.incorrectPass {
+    font-size: 18px;
+    color: white;
+    background-color: rgb(109, 1, 1);
+    font-style: italic;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    grid-area: 3/2/4/3;
+    margin: 10px 25px 0 30px;
+    padding: 4px 10px;
+}
+
+.incorrectPass.on {
+    display: flex;
+}
+
+.successMsg {
+    font-size: 18px;
+    color: white;
+    background-color: darkolivegreen;
+    font-style: italic;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    grid-area: 3/2/4/3;
+    margin: 10px 25px 0 30px;
+    padding: 4px 10px;
+}
+
+.successMsg.on {
+    display: flex;
+}
+
+.logInBtn {
+    height: 40px;
+    width: 150px;
+    background-color: rgba(183, 184, 184, 0.109);
+    font-size: 18px;
+    color: rgb(4, 66, 61);
+    text-decoration: none;
+    margin: 50px auto 0 auto;
+    align-items: center;
+    grid-area: 4 / 2 / 5 / 3;
+    border-radius: 10px;
+    transition: background-color 0.25s ease-in-out;
+    cursor: pointer;
+}
+.logInBtn:hover {
+    background-color: rgba(28, 88, 73, 0.452);
+    color: white;
+}
+
+/************* Petition **************/
+.petition-body {
+    background-image: url(./assets/jeshoots-com--2vD8lIhdnw-unsplash.jpg);
+    height: 100%;
+    background-blend-mode: screen;
+}
+.petition-wrapper {
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    color: rgb(255, 255, 245);
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    grid-template-rows: auto auto auto 30px;
+    height: 100vh;
+}
+
+p {
+    margin: 0;
+}
+.petition-menu-line {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-area: 1/1/2/3;
+    padding: 10px;
+    margin: 0 10px 0 10px;
+}
+.petition-home-button {
+    align-items: center;
+    background-color: transparent;
+    border-color: transparent;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.petition-home-button img {
+    height: 40px;
+    width: 40px;
+    justify-items: right;
+}
+.petition-logoutBtn {
+    justify-self: right;
     align-self: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    font-size: 20px;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
+.text-section {
+    background-color: rgba(0, 0, 0, 0.527);
+    padding: 10px 20px 0px 20px;
+    grid-area: 3 / 1 / 4/ 4;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.The-Story {
+    font-size: 42px;
+}
+
+.conclusion {
+    font-size: 26px;
+    font-style: italic;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.signature-section {
+    grid-area: 2 /2 /3 / 3;
+    text-align: center;
+    justify-self: flex-end;
+    color: rgb(61, 61, 61);
+    padding: 10px;
+    border-radius: 25px;
+    margin: 10px 30px 10px 0;
+}
+
+.sign-this {
+    font-size: 26px;
+    font-style: italic;
+    text-align: center;
+}
+
 .canvas-wrapper {
     display: flex;
-    align-items: center;
-    margin: 20px 25px 0 30px;
+    justify-content: center;
+    margin: 20px 0 30px 0;
 }
 .sig-canvas {
-    height: 160px;
-    background-color: rgb(255, 255, 255, 0.4);
+    height: 120px;
+    background-color: rgba(151, 151, 151, 0.096);
+    border: 1px solid rgb(54, 54, 54);
+    border-radius: 10px;
     font-size: 16px;
+    color: rgba(251, 251, 98, 0.596);
     cursor: url("/assets/pen-icon-s.png"), auto;
+    align-self: center;
 }
 .empty-canvas {
     display: none;
@@ -111,14 +381,15 @@ p {
 .errorMsg {
     font-size: 18px;
     color: white;
-    background-color: rgb(109, 1, 1);
+    background-color: rgba(109, 1, 1, 0.849);
     font-style: italic;
-    margin: 5px 0 5px 30px;
+    margin: 5px 0 5px 0;
     grid-column: 2 / 3;
     align-items: center;
     justify-content: center;
     height: 30px;
     display: none;
+    margin: 0 30px 0 30px;
 }
 
 .errorMsg.on {
@@ -129,19 +400,26 @@ p {
     grid-column-start: 2;
     display: grid;
     grid-template-columns: auto auto;
-    justify-content: space-between;
-    margin: 20px 25px 0 30px;
+    justify-content: center;
+    margin-top: 10px;
 }
+
 .submit-button {
     height: 40px;
     width: 150px;
     background-color: rgba(22, 107, 96, 0.192);
-    justify-content: flex-start;
     grid-column-start: 1;
-    align-items: flex-end;
     font-size: 18px;
-    color: rgb(133, 195, 195);
+    color: rgb(21, 85, 85);
     text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.25s ease-in-out;
+    cursor: pointer;
+    margin-right: 10px;
+}
+.submit-button:hover {
+    background-color: rgba(28, 88, 73, 0.452);
+    color: white;
 }
 
 .clear-sig {
@@ -150,128 +428,368 @@ p {
     background-color: rgba(22, 107, 96, 0.192);
     grid-column-start: 2;
     font-size: 18px;
-    color: rgb(133, 195, 195);
+    color: rgb(21, 85, 85);
+    border-radius: 10px;
+    transition: background-color 0.25s ease-in-out;
     cursor: pointer;
 }
 
-footer {
-    grid-area: 4 / 1 / 5/ 4;
-    background: rgba(255, 255, 255, 0.3);
-    font-size: 13px;
-    color: rgb(179, 179, 177);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
+.alreadySigned {
+    /* background-color: rgba(251, 251, 98, 0.356); */
+    border-radius: 25px;
+    font-size: 20px;
+    padding: 20px 20px 0 20px;
+    color: rgb(61, 61, 61);
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    grid-area: 2 /2 /3 / 3;
+    line-height: 2;
+    align-self: center;
+    justify-self: flex-end;
+    text-align: center;
+    margin-right: 30px;
 }
-.footer-text {
-    margin-left: 10px;
-    color: black;
+.helloUser {
+    font-style: italic;
+    font-size: 26px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    grid-area: 2 /2 /3 / 3;
+}
+.seeAllSigners a {
+    text-decoration: none;
+    color: rgb(31, 31, 31);
+    font-weight: bold;
+    font-style: italic;
+}
+.unSign-editProfile a {
+    text-decoration: none;
+    font-style: italic;
+    color: rgb(61, 61, 0);
+    font-size: 16px;
+    margin-top: 30px;
 }
 
 /*************THANK-YOU**************/
 
 .thanks-body {
-    background-image: url(./assets/thankyou1.jpg);
-    height: 100vh;
-    background-color: rgb(22, 65, 65);
+    background-image: url(./assets/thanks2.jpg);
     background-blend-mode: screen;
 }
 .thanks-wrapper {
-    background-color: rgb(0, 0, 0, 0.4);
-    margin: 0;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    height: 100%;
+    color: ivory;
+    height: 100vh;
     display: grid;
-    grid-template-rows: 10% 30% 1fr 3%;
-    color: rgb(0, 49, 49);
+    grid-template-rows: auto 1fr 30px;
+    grid-template-columns: 30% 1fr 30%;
 }
+.menu-line {
+    padding: 10px;
+    margin: 0 30px 0 10px;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-area: 1/1/2/4;
+}
+
 .home-button {
-    height: 60px;
-    width: 60px;
-    margin-top: 5px;
-    margin-left: 10px;
-    display: flex;
-    justify-content: center;
     align-items: center;
     background-color: transparent;
     border-color: transparent;
-    cursor: pointer;
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 .home-button img {
     height: 40px;
     width: 40px;
-    justify-self: flex-start;
-    grid-row-start: 1;
-    grid-row-end: 2;
-}
-.thanks-section {
-    margin-left: 30px;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    align-self: end;
-}
-.successfully-signed {
-    font-size: 36px;
-    font-weight: bold;
-    font-style: italic;
+    justify-items: right;
 }
 
-.thanks-msg {
-    font-size: 32px;
+.logoutBtn {
+    justify-self: right;
+    align-self: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    font-size: 20px;
+    color: ivory;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.thanks-section {
+    margin-top: 150px;
+    grid-area: 2/1/3/2;
+    font-size: 28px;
     font-style: italic;
+    margin-left: 30px;
+    align-self: flex-start;
+    justify-self: center;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.userSigPic {
+    background-color: rgba(211, 210, 167, 0.342);
+    border-radius: 25px;
+    padding: 10px;
+    height: 80px;
+    width: 250px;
+    margin-top: 20px;
 }
 
 .signers {
-    margin: 40px 0 0 30px;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    font-size: 26px;
+    margin-top: 150px;
+    margin-right: 30px;
+    grid-area: 2/3/3/4;
+    font-size: 28px;
+    align-self: flex-start;
+    line-height: 1.5;
+    color: ivory;
+    font-style: italic;
+    text-align: center;
 }
 
 .clickHere a {
+    margin-top: 20px;
     font-style: italic;
-    color: rgb(141, 197, 197);
-    cursor: pointer;
+    color: ivory;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.thanksFooter {
+    grid-area: 3/1/4/4;
+}
+.footer-text {
+    margin-left: 10px;
+    color: rgba(255, 255, 255, 0.472);
 }
 
 /*************signers**************/
 
 .signers-body {
-    background-image: url(./assets/background1.jpg);
-    height: 100%;
-    background-color: rgb(11, 46, 46);
+    background-image: url(./assets/support3.jpg);
+    height: 100vh;
+    width: 100%;
     background-blend-mode: screen;
-}
-.signers-wrapper {
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    height: 100%;
     display: grid;
-    grid-template-rows: 10% 15% 1fr 3%;
+    grid-template-rows: auto auto auto 30px;
     grid-template-columns: auto;
 }
+
+.signers-menu-line {
+    padding: 10px;
+    margin: 0 30px 0 10px;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-area: 1/1/2/2;
+}
+
+.signers-home-button {
+    margin-top: 15px;
+    margin-left: 10px;
+    align-items: center;
+    background-color: transparent;
+    border-color: transparent;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.signers-home-button img {
+    height: 40px;
+    width: 40px;
+    justify-items: right;
+}
+
+.surfLinks {
+    justify-self: right;
+    align-self: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin: 15px 10px 0 0;
+    font-size: 20px;
+    line-height: 2;
+}
+
+.surfLinks a {
+    font-size: 20px;
+    color: ivory;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
 .supporters-list {
-    margin-top: 40px;
+    margin-top: 10px;
     margin-left: 50px;
     font-size: 42px;
     font-weight: bold;
     font-style: italic;
-    color: rgb(1, 66, 66);
-    grid-area: 2 / 1 / 3 /2;
+    color: ivory;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.signers-wrapper {
+    background-color: rgba(37, 37, 37, 0.623);
+    border-radius: 25px;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin: 0 30px 15px 30px;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    overflow-y: scroll;
+}
+
+.signersTable {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    color: ivory;
 }
 .li {
-    line-height: 1.7;
-    margin-left: 50px;
+    line-height: 2;
     font-size: 18px;
-    color: rgb(1, 66, 66);
-    grid-area: 3 / 1 / 4 /2;
-    /* align-items: flex-start; */
+    display: grid;
+    grid-template-columns: 30px 1fr 1fr 1fr 1fr;
+    color: ivory;
 }
-/* .li a {
+
+.name {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.city {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.country {
+    grid-column-start: 4;
+    grid-column-end: 5;
+}
+.dateAndTime {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    text-align: end;
+}
+.signersFooter {
+    grid-area: 4/1/5/2;
+}
+
+/************* Users Profile **************/
+.userProfileBody {
+    background-image: url(./assets/two-pens-in-middle-of-apple-keyboard-and-eyeglasses-1906440.jpg);
+}
+
+.userProfileWrapper {
+    background-color: rgb(0, 0, 0, 0.5);
+    background-blend-mode: screen;
+    margin: 0;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    color: rgb(255, 255, 245);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20px auto auto auto 30px;
+    height: 100vh;
+}
+
+.userProfileHeader {
+    font-size: 38px;
+    align-self: center;
+    justify-self: center;
+    grid-area: 2/1/3/2;
+}
+
+.userProfileSection {
+    font-size: 24px;
+    align-self: flex-start;
+    justify-self: center;
+    grid-area: 3/1/4/2;
+}
+
+.fillInData {
     font-style: italic;
-    color: rgb(6, 138, 138);
+    margin: 0;
+    padding-bottom: 10px;
+    align-self: center;
+    justify-self: center;
+}
+
+.userProfile-InputFields {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 20% 1fr;
+}
+
+.userProfile-InputFields label {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    font-size: 18px;
+    align-self: flex-end;
+}
+.profileUserInput {
+    height: 30px;
+    background-color: transparent;
+    padding: 3px 10px 3px 10px;
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border: none;
+    border-bottom: 1px solid ivory;
+    margin: 10px 25px 0 30px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.profileSubmitBtn {
+    height: 40px;
+    width: 150px;
+    background-color: rgba(183, 184, 184, 0.109);
+    font-size: 18px;
+    color: rgb(4, 66, 61);
+    text-decoration: none;
+    margin: 40px 25px 10px 5px;
+    align-items: center;
+    justify-self: flex-end;
+    grid-area: 9 / 2 / 10 / 3;
+    border-radius: 10px;
+    transition: background-color 0.25s ease-in-out;
     cursor: pointer;
-} */
+}
+.profileSubmitBtn:hover {
+    background-color: rgba(28, 88, 73, 0.452);
+    color: white;
+}
+
+.editProfileBtn {
+    height: 40px;
+    width: 150px;
+    background-color: rgba(183, 184, 184, 0.109);
+    font-size: 18px;
+    color: rgb(4, 66, 61);
+    text-decoration: none;
+    margin: 40px 5px 30px 25px;
+    align-items: center;
+    justify-self: flex-start;
+    grid-area: 9 / 2 / 10 / 3;
+    border-radius: 10px;
+    transition: background-color 0.25s ease-in-out;
+    cursor: pointer;
+}
+.editProfileBtn:hover {
+    background-color: rgba(28, 88, 73, 0.452);
+    color: white;
+}
+
+.return {
+    text-decoration: none;
+    color: ivory;
+    font-size: 22px;
+    text-decoration: none;
+    margin: 10px 25px 0 30px;
+    align-self: center;
+    justify-self: center;
+    grid-area: 10/2/11/3;
+    cursor: pointer;
+    text-decoration: underline;
+    /* font-weight: bold; */
+    /* font-style: italic; */
+}
+
+.userProfileFooter {
+    grid-area: 5/1/6/2;
+}
 
 /************* Responsive **************/
 

@@ -1,22 +1,26 @@
 <div class="thanks-body">
 
     <section class= "thanks-wrapper">
-        <a class="home-button" href="/petition">
-            <img src="/assets/home-run.png" alt="home-button-image">
-        </a>
+        <div class="menu-line">
+            <a  href="signup" class="home-button">
+            <img src="/assets/home-btn.png" alt="home-button-image"></a>
+            <a href="/logout" class="logoutBtn" >Logout</a>
+        </div>
 
         <section class="thanks-section">
-            <p class="successfully-signed">You have successfuly signed the petition</p>
             <p class="thanks-msg">Thank you for being a part in Dalia's journey!</p>
+            {{!-- <p class="successfully-signed">You have successfuly signed the petition</p> --}}
+            <img src="{{signatureUrl}}" alt="SignaturePic" class="userSigPic">
         </section>
+
 
         <section class="signers">
-            
-            <p class="num-of-signers"> <strong>{{signersCount}}</strong> supporters have signed this petition </p>
-            <p class="clickHere"> click <a href="/signers">here</a> to see who signed along!</p>
+            <p class="num-of-signers"> <strong>{{usersCount}}</strong> supporters<br> have signed this petition </p>
+            <p class="clickHere">  <a href="/signers">See who signed along!</a></p>
         </section>
 
-        <footer><p class="footer-text">© 2020  Dalia Abu-Soud</p></footer>   
+    <footer class="thanksFooter"><p class="footer-text">© 2020  Dalia Abu-Soud</p></footer>   
     </section>
+    
 
 </div>
