@@ -5,14 +5,15 @@
       <img src="/assets/home-btn.png" alt="home-button-image"></a>
     <div class="bycity-menuLinks">
       <a href="/logout">Logout</a>
-      <a herf="./un-sign">Un-Sign</a>
-      <a href="./userProfile">Edit Profile</a>
-      <a herf="./signers">Our Supporters</a>
-      <a href="./petition">Petition</a>
+      <a href="/unsign">Un-Sign</a>
+      <a href="/userProfile">Edit Profile</a>
+      <a href="/signers">Our Supporters</a>
+      <a href="/petition">Petition</a>
     </div>
   </div>
 
   <h1 class="supporters-list">Our Supporters List</h1>
+  <a href="/signers" class="back">back</a>
 
   <section class="bycity-wrapper">
 
@@ -22,9 +23,9 @@
       <li>
         <div class="li">
           <p class="name">{{firstname}} {{lastname}}</p>
-          <a href="./bycity" class="city">{{city}}</a>
-          <a href="bycountry" class="country">{{country}}</a>
-          <p class="age">{{age}}</p>
+          <p class="city">{{city}}</p>
+          <p class="country">{{country}}</p>
+          <p class="age">{{age}} years old</p>
           <p class="dataAndTime">Signed on {{dateFormat ts "Do.MM.YYYY"}}</p>
         </div>
       </li>

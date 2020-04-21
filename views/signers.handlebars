@@ -1,34 +1,34 @@
 <div class="signers-body">
-    
-        <div class="signers-menu-line">
-            <a  href="signup" class="signers-home-button">
+
+    <div class="signers-menu-line">
+        <a href="unsign-menu-line" class="signers-home-button">
             <img src="/assets/home-btn.png" alt="home-button-image"></a>
-            <div class="signers-menuLinks">
-                <a href="/logout" >Logout</a>
-                <a herf="./un-sign">Un-Sign</a>
-                <a href="./userProfile">Edit Profile</a>
-                <a href="./petition">Petition</a>
-            </div>
+        <div class="signers-menuLinks">
+            <a href="/logout">Logout</a>
+            <a href="/userProfile">Edit Profile</a>
+
         </div>
+    </div>
 
-    <h1 class="supporters-list">Our Supporters List</h1> 
+    <h1 class="supporters-list">Our Supporters List</h1>
 
-    <section class="signers-wrapper" >
-       
-        <
-        <ol class="signersTable">
-        {{#signersData}}
-        <li>
-            <div class="li">
-                <p class="name">{{firstname}} {{lastname}}</p>  
-                <a href="./bycity" class="city">{{city}}</a> 
-                <a href="bycountry" class="country">{{country}}</a>
-                <p class="age">{{age}}</p>
-                <p class="dataAndTime">Signed on {{dateFormat ts "Do.MM.YYYY"}}</p>
-            </div>
-        </li>
-        {{/signersData}}
-    </ol>
+    <section class="signers-wrapper">
+
+        < <ol class="signersTable">
+            {{#signersData}}
+            <li>
+                <div class="li">
+                    <p class="name">{{firstname}} {{lastname}}</p>
+                    <a href="bycity/{{city}}" class="city">{{city}}</a>
+                    <a href="bycountry/{{country}}" class="country">{{country}}</a>
+                    <p class="age">{{age}} years old</p>
+                    <p class="dataAndTime">Signed on {{dateFormat ts "Do.MM.YYYY"}}</p>
+                </div>
+            </li>
+            {{/signersData}}
+            </ol>
     </section>
-    <footer class="signersFooter"><p class="footer-text">© 2020  Dalia Abu-Soud</p></footer>  
+    <footer class="signersFooter">
+        <p class="footer-text">© 2020 Dalia Abu-Soud</p>
+    </footer>
 </div>

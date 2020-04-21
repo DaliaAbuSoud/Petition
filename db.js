@@ -60,7 +60,7 @@ module.exports.getCityUsersData = (city) => {
 
 module.exports.getCountriesUsersData = (country) => {
   return db
-    .query(`SELECT * FROM userdata WHERE country=${country};`)
+    .query(`SELECT * FROM userdata WHERE country='${country}';`)
     .then((result) => {
       return result.rows;
     });
@@ -109,4 +109,12 @@ module.exports.usersCount = () => {
   return db.query(`SELECT COUNT(*) FROM userdata`).then((results) => {
     return results.rows[0].count;
   });
+};
+
+// *************** REMOVE SIGNATURE  ***********************
+module.exports.removeSig = (signatureUrl, id) => {
+  return db.query(` UPDATE userdata SET signatureurl=$1  WHERE id=$2;`, [
+    signatureUrl,
+    id,
+  ]);
 };

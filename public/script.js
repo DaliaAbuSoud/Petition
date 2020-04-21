@@ -209,47 +209,11 @@ logInUserInput = () => {
   });
 };
 
-// ********************************** Petition Signature **********************************
-
-userSignature = () => {
-  const submitSig = document.querySelector(".submit-button");
-  const sigCanvas = document.querySelector(".sig-canvas");
-  const emptyCanvas = document.querySelector(".empty-canvas");
-  const errorMsg = document.querySelector(".errorMsg");
-
-  submitSig.addEventListener("click", (event) => {
-    event.preventDefault();
-    console.log("TTTTEEEESSSSSSSST");
-
-    const signatureUrl = sigCanvas.toDataURL();
-    const emptyCanvasUrl = emptyCanvas.toDataURL();
-
-    console.log("SIGURL:", signatureUrl);
-    console.log("EMPTY CANVAS:", emptyCanvasUrl);
-    console.log("URL COMPARE: ", signatureUrl === emptyCanvasUrl);
-
-    if (signatureUrl == emptyCanvasUrl) {
-      errorMsg.classList.add("on");
-    } else {
-      $.ajax({
-        url: "/petition-api",
-        method: "POST",
-        data: {
-          signatureUrl: signatureUrl,
-        },
-        success: (response) => {
-          window.location.href = "/thanks";
-        },
-      });
-    }
-  });
-};
-
 // ********************************** Edit User Profile **********************************
 editUserProfile = () => {
   const editProfile = document.querySelector(".editProfileBtn");
   const editProfileForm = document.querySelector(".userProfile-InputFields");
-  const submitBtn = document.querySelector(".editProfileBtn");
+  const nameElement = document.querySelector('input[name="firstName"]');
 
   console.log("editProfile: ", editProfile);
 
@@ -259,12 +223,14 @@ editUserProfile = () => {
     profileInput.forEach((element) => {
       element.disabled = false;
     });
+
+    nameElement.focus();
   });
 
   editProfileForm.addEventListener("submit", (event) => {
     event.preventDefault();
     console.log(event);
-    const elementsList = event.srcElement.elements;
+    // const elementsList = event.srcElement.elements;
 
     const dataToSend = {
       firstName: document.querySelector('input[name="firstName"]').value,
@@ -291,6 +257,60 @@ editUserProfile = () => {
       error: (err) => {
         failureMsg.textContent = response.responseJSON.message;
         failureMsg.classList.add("on");
+      },
+    });
+  });
+};
+
+// ********************************** Petition Signature **********************************
+
+userSignature = () => {
+  const submitSig = document.querySelector(".submit-button");
+  const sigCanvas = document.querySelector(".sig-canvas");
+  const emptyCanvas = document.querySelector(".empty-canvas");
+  const errorMsg = document.querySelector(".errorMsg");
+
+  submitSig.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const signatureUrl = sigCanvas.toDataURL();
+    const emptyCanvasUrl = emptyCanvas.toDataURL();
+
+    if (signatureUrl == emptyCanvasUrl) {
+      errorMsg.classList.add("on");
+    } else {
+      $.ajax({
+        url: "/petition-api",
+        method: "POST",
+        data: {
+          signatureUrl: signatureUrl,
+        },
+        success: (response) => {
+          window.location.href = "/thanks";
+        },
+      });
+    }
+  });
+};
+
+// ********************************** Un-Sign **********************************
+
+removeSig = () => {
+  const yesBtn = document.querySelector(".yes");
+
+  yesBtn.addEventListener("click", (event) => {
+    $.ajax({
+      url: "/unsign",
+      method: "POST",
+      data: {
+        signatureUrl: null,
+      },
+      success: (response) => {
+        console.log("REMOVE SIG RESPONSE", response);
+        window.location.href = "/petition";
+      },
+      error: (error) => {
+        console.log("REMOVE SIG ERROR", error);
       },
     });
   });

@@ -230,7 +230,6 @@ app.get("/signers", (req, res) => {
         res.render("signers", {
           signersData: response.rows,
         });
-        console.log("*********SIGNERS DATA", signersData);
       })
       .catch((err) => {
         console.log("ERROR :", err);
@@ -246,10 +245,30 @@ app.get("/bycity/:cityName", (req, res) => {
   if (userID) {
     db.getCityUsersData(req.params.cityName)
       .then((response) => {
+        console.log("***********RESPONSE CITY", response);
         res.render("bycity", {
-          signersData: response.rows,
+          signersData: response,
         });
         console.log("*******RESPONSE: ".signersData);
+      })
+      .catch((error) => {
+        console.log("ERROR: ", error);
+      });
+  }
+});
+
+// ************************ ByCountry PAGE ******************************
+
+app.get("/bycountry/:countryName", (req, res) => {
+  const { userID } = req.session;
+
+  if (userID) {
+    db.getCountriesUsersData(req.params.countryName)
+      .then((response) => {
+        console.log("***********RESPONSE COUNTRY", response);
+        res.render("bycountry", {
+          signersData: response,
+        });
       })
       .catch((error) => {
         console.log("ERROR: ", error);
@@ -319,6 +338,42 @@ app.post("/userprofile", (req, res) => {
     );
   }
 });
+
+// ************************ UN_SIGN PAGE ******************************
+
+app.get("/unsign", (req, res) => {
+  db.removeSig(req.session.userID)
+    .then((signatureUrl) => {
+      res.render("unsign", {
+        signatureUrl: signatureUrl,
+      });
+    })
+    .catch((err) => {
+      console.log("ERROR: ", err);
+    });
+});
+
+app.post("/unsign", (req, res) => {
+  const { userID } = req.session;
+  const { signatureUrl } = req.body;
+
+  if (userID) {
+    db.removeSig(signatureUrl, req.session.userID)
+      .then(() => {
+        res.status(200).send({
+          message: "Signature Removed",
+        });
+      })
+      .catch((error) => {
+        res.status(404).send({
+          message: "Failed",
+        });
+        console.log("REMOVE SIG ERROR:", error);
+      });
+  }
+});
+
+// ***************************************************************************
 
 app.listen(8080, () =>
   console.log("**************Server is Listening**************")
