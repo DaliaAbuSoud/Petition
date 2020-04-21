@@ -1,0 +1,37 @@
+<div class="bycity-body">
+
+  <div class="bycity-menu-line">
+    <a href="signup" class="bycity-home-button">
+      <img src="/assets/home-btn.png" alt="home-button-image"></a>
+    <div class="bycity-menuLinks">
+      <a href="/logout">Logout</a>
+      <a herf="./un-sign">Un-Sign</a>
+      <a href="./userProfile">Edit Profile</a>
+      <a herf="./signers">Our Supporters</a>
+      <a href="./petition">Petition</a>
+    </div>
+  </div>
+
+  <h1 class="supporters-list">Our Supporters List</h1>
+
+  <section class="bycity-wrapper">
+
+
+    < <ol class="bycityTable">
+      {{#signersData}}
+      <li>
+        <div class="li">
+          <p class="name">{{firstname}} {{lastname}}</p>
+          <a href="./bycity" class="city">{{city}}</a>
+          <a href="bycountry" class="country">{{country}}</a>
+          <p class="age">{{age}}</p>
+          <p class="dataAndTime">Signed on {{dateFormat ts "Do.MM.YYYY"}}</p>
+        </div>
+      </li>
+      {{/signersData}}
+      </ol>
+  </section>
+  <footer class="bycity">
+    <p class="footer-text">© 2020 Dalia Abu-Soud</p>
+  </footer>
+</div>

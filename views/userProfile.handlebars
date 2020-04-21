@@ -1,53 +1,60 @@
 <div class="userProfileBody">
 
-    <section class="userProfileWrapper" >
+    <section class="userProfileWrapper">
 
-        <div class="menu-line">
-            <a  href="signup" class="home-button">
-            <img src="/assets/home-btn.png" alt="home-button-image"></a>
-            <a href="/logout" class="logoutBtn" >Logout</a>
+        <div class="userProfile-menu-line">
+            <a href="signup" class="userProfile-home-button">
+                <img src="/assets/home-btn.png" alt="home-button-image"></a>
+            <div class="userProfile-menuLinks">
+                <a href="/logout">Logout</a>
+                <a herf="./un-sign">Un-Sign</a>
+                <a href="./signers">Our Supporters</a>
+                <a href="./petition">Petition</a>
+            </div>
         </div>
-        
-        
 
-        <h1 class= "userProfileHeader">User Profile</h1>
+
+
+        <h1 class="userProfileHeader">User Profile</h1>
 
         <section class="userProfileSection">
 
-        <h2 class="fillInData">Please fill in the below data</h2>
-        <p class="incorrectPass profileFailed"></p>
-        <p class="successMsg profileUpdated"></p>
-        <form class="userProfile-InputFields">
-
-            <label>First Name</label>
-            <input type="text" name="firstName" value="{{firstName}}" class="profileUserInput"  required disabled="true">
-            <label>Last Name</label>
-            <input type="text" name="lastName" value="{{lastName}}" class="profileUserInput"  required disabled="true">
-            <label>City</label>
-            <input type="text" name="city" value="{{city}}" class="profileUserInput"  required disabled="true">
-            <label>Country</label>
-            <input type="text" name="country" value="{{country}}" class="profileUserInput"  required disabled="true">
-            <label>Age</label>
-            <input type="text" name="age" value="{{age}}" class="profileUserInput"  required disabled="true">
-            <label>Password</label>
-            <input type="password" name="password"  class="profileUserInput"  disabled="true">
-            
-            <button type="submit" class="profileSubmitBtn">Submit</button>
             <button type="button" class="editProfileBtn">Edit Profile</button>
+            <p class="incorrectPass profileFailed"></p>
+            <p class="successMsg profileUpdated"></p>
 
-            <a href="/petition" class="return">Return To Petition</a>
-        </form> 
+            <form class="userProfile-InputFields">
+                <label>First Name</label>
+                <input type="text" name="firstName" value="{{firstName}}" class="profileUserInput" required
+                    disabled="true">
+                <label>Last Name</label>
+                <input type="text" name="lastName" value="{{lastName}}" class="profileUserInput" required
+                    disabled="true">
+                <label>City</label>
+                <input type="text" name="city" value="{{city}}" class="profileUserInput" required disabled="true">
+                <label>Country</label>
+                <input type="text" name="country" value="{{country}}" class="profileUserInput" required disabled="true">
+                <label>Age</label>
+                <input type="text" name="age" value="{{age}}" class="profileUserInput" required disabled="true">
+                <label>Password</label>
+                <input type="password" name="password" class="profileUserInput" disabled="true">
 
-   
+                <button type="submit" class="profileSubmitBtn">Submit</button>
+
+                <a href="/petition" class="return">Return To Petition</a><br>
+                <a href="/signers" class="supporters">See Who Our Supporters Are!</a>
+            </form>
+
+
         </section>
 
-        <footer class="userProfileFooter"><p class="footer-text">© 2020  Dalia Abu-Soud</p></footer>  
-    
+        <footer class="userProfileFooter">
+            <p class="footer-text">© 2020 Dalia Abu-Soud</p>
+        </footer>
+
     </section>
 
 </div>
-    <script>
-        editUserProfile()
-    </script>
-
-
+<script>
+    editUserProfile()
+</script>

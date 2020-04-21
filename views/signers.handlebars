@@ -3,11 +3,12 @@
         <div class="signers-menu-line">
             <a  href="signup" class="signers-home-button">
             <img src="/assets/home-btn.png" alt="home-button-image"></a>
-            <p class="surfLinks">
-                <a href="/logout">Logout</a> <br>
-                <a href="/petition">Petition</a>
-            </p>
-
+            <div class="signers-menuLinks">
+                <a href="/logout" >Logout</a>
+                <a herf="./un-sign">Un-Sign</a>
+                <a href="./userProfile">Edit Profile</a>
+                <a href="./petition">Petition</a>
+            </div>
         </div>
 
     <h1 class="supporters-list">Our Supporters List</h1> 
@@ -20,9 +21,10 @@
         <li>
             <div class="li">
                 <p class="name">{{firstname}} {{lastname}}</p>  
-                <p class="city">{{city}}</p> 
-                <p class="country">{{country}}</p>
-                <p class="dataAndTime">Signed on {{dateFormat ts "MMMM Do YYYY"}}</p>
+                <a href="./bycity" class="city">{{city}}</a> 
+                <a href="bycountry" class="country">{{country}}</a>
+                <p class="age">{{age}}</p>
+                <p class="dataAndTime">Signed on {{dateFormat ts "Do.MM.YYYY"}}</p>
             </div>
         </li>
         {{/signersData}}
