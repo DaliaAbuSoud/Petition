@@ -8,6 +8,7 @@ CREATE TABLE userdata (
     hashedPass BYTEA NOT NULL CHECK (hashedPass != ''),
     city VARCHAR,
     country VARCHAR,
+    age VARCHAR,
     signatureUrl VARCHAR,
     ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

@@ -1,10 +1,16 @@
 <div class="petition-body">
 
     <section class="petition-wrapper">
+
         <div class="petition-menu-line">
             <a  href="signup" class="petition-home-button">
-            <img src="/assets/home-btn black.png" alt="home-button-image"></a>
-            <a href="/logout" class="petition-logoutBtn" >Logout</a>
+            <img src="/assets/home-btn.png" alt="home-button-image"></a>
+            <div class="petition-menuLinks">
+                <a href="/logout" >Logout</a>
+                <a herf="./un-sign">Un-Sign</a>
+                <a href="./signers">Our Supporters</a>
+                <a href="./userProfile">Edit Profile</a>
+            </div>
         </div>
         
 
@@ -27,7 +33,7 @@
 
         {{#unless sigAvailable}}
         <section class="signature-section">    
-            <p class="sign-this">Sign this Petition if you think Dalia should be given a certificate!</p>
+            <p class="sign-this">Hello {{firstName}}!<br><br>Please sign this petition if you think <br>that Dalia should be given a certificate!</p>
 
             <form class="sigForm">
                 <div class="canvas-wrapper">
@@ -53,10 +59,10 @@
             <div class="helloUser"> 
                 <p> Welcome Back {{firstName}}!<p/> 
             </div>
-            <p>You have signed this petition on: <br>{{dateFormat ts "MMMM Do YYYY"}}</p>
-            <p><strong>{{usersCount}}</strong> supporters have signed along! </p>
-            <p class="seeAllSigners"> Click <a href="/signers">here</a> to see all supporters</p>
-            <p class="unSign-editProfile">____<a herf="">Un-Sign</a>___<a href="./userProfile">Edit Profile</a>____</p>
+            <p>You have signed this petition on: <strong>{{dateFormat ts "DD.MM.YYYY"}}</strong></p>
+            <p><strong>{{usersCount}}</strong> supporters have signed this petition</p>
+            <p class="seeAllSigners"><a href="/signers">See who signed along!</a> </p>
+            
         </section>
         {{/if}}
 
