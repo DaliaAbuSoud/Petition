@@ -341,7 +341,7 @@ p {
 }
 .text-section {
   background-color: rgba(0, 0, 0, 0.527);
-  padding: 10px 20px 0px 20px;
+  padding: 10px 40px 0px 40px;
   grid-area: 3 / 1 / 4/ 3;
   font-size: 20px;
   line-height: 1.5;
@@ -1100,45 +1100,30 @@ p {
   margin: 0 100px 0 100px;
 }
 
-.yes {
-  color: rgb(5, 100, 100);
-  border: 1px solid black;
-  border-radius: 4px;
-  height: 30px;
-  width: 60px;
-  background-color: rgb(255, 255, 255);
-  transition: background-color 0.25s ease-in-out;
-  cursor: pointer;
-  font-weight: bold;
-}
 .yes:hover {
   background-color: rgb(128, 0, 0);
   color: white;
 }
 
+.yes,
 .no {
   color: rgb(5, 100, 100);
   border: 1px solid black;
   border-radius: 4px;
-  height: 30px;
   width: 60px;
   background-color: rgb(255, 255, 255);
   transition: background-color 0.25s ease-in-out;
   cursor: pointer;
   font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  font-style: normal;
+  color: rgb(5, 100, 100);
 }
+
 .no:hover {
   background-color: darkolivegreen;
   color: white;
-}
-.no a:hover {
-  background-color: darkolivegreen;
-  color: white;
-}
-.no a {
-  text-decoration: none;
-  color: rgb(5, 100, 100);
-  font-weight: bold;
 }
 
 .unsignFooter {

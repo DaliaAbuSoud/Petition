@@ -342,15 +342,20 @@ app.post("/userprofile", (req, res) => {
 // ************************ UN_SIGN PAGE ******************************
 
 app.get("/unsign", (req, res) => {
-  db.removeSig(req.session.userID)
-    .then((signatureUrl) => {
-      res.render("unsign", {
-        signatureUrl: signatureUrl,
+  const { userID } = req.session;
+  if (userID) {
+    db.getSignature(userID)
+      .then((signatureUrl) => {
+        res.render("unsign", {
+          signatureUrl: signatureUrl,
+        });
+      })
+      .catch((err) => {
+        console.log("ERROR: ", err);
       });
-    })
-    .catch((err) => {
-      console.log("ERROR: ", err);
-    });
+  } else {
+    res.redirect("signup");
+  }
 });
 
 app.post("/unsign", (req, res) => {
