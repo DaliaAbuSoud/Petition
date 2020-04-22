@@ -1,7 +1,9 @@
 // where we write all database setup. its like our middle man between database and server.
-
+let dbUrl =
+  process.env.DATABASE_URL ||
+  "postgres:postgres:postgres@localhost:5432/msg-petition";
 let spicedPg = require("spiced-pg");
-let db = spicedPg("postgres:postgres:postgres@localhost:5432/msg-petition");
+let db = spicedPg(dbUrl);
 
 //query method, allows us to talk to our database and we pass to it whatever you want to say to teh database.
 
