@@ -248,6 +248,7 @@ app.get("/bycity/:cityName", (req, res) => {
         console.log("***********RESPONSE CITY", response);
         res.render("bycity", {
           signersData: response,
+          cityName: req.params.cityName,
         });
         console.log("*******RESPONSE: ".signersData);
       })
@@ -268,6 +269,7 @@ app.get("/bycountry/:countryName", (req, res) => {
         console.log("***********RESPONSE COUNTRY", response);
         res.render("bycountry", {
           signersData: response,
+          countryName: req.params.countryName,
         });
       })
       .catch((error) => {
@@ -290,7 +292,7 @@ app.get("/userprofile", (req, res) => {
       };
 
       console.log("USERDATA", userData);
-      res.render("userprofile", userInfo);
+      res.render("userProfile", userInfo);
     })
     .catch((err) => {
       console.log("ERROR: ", err);
