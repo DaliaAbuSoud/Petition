@@ -1,0 +1,44 @@
+<div class="unsign-body">
+
+  <section class="unsign-wrapper">
+
+    <div class="unsign-menu-line">
+      <a href="petition" class="unsign-home-button">
+        <img src="/assets/home-btn.png" alt="home-button-image"></a>
+      <div class="unsign-menuLinks">
+        <a href="/logout">Logout</a>
+        <a href="/userProfile">Edit Profile</a>
+        <a herf="/signers">Supporters</a>
+
+      </div>
+    </div>
+
+    <section class="unsign-section">
+
+      <p class="successfully-signed">You have signed this petition on {{dateFormat ts "DD.MM.YYYY"}}</p>
+      <p class="unsign-msg">We're sad you won't be a part in Dalia's journey</p>
+      <img src="{{signatureUrl}}" alt="SignaturePic" class="userSigPic">
+      <p class="unsignQ">Do you still wish to Un-Sign from this petition?</p>
+
+      <div class="unSignBtn">
+        <button class="yes">Yes</button>
+        <a class="no" href="/userProfile">No</a>
+      </div>
+
+    </section>
+
+
+
+
+
+    <footer class="unsignFooter">
+      <p class="footer-text">© 2020 Dalia Abu-Soud</p>
+    </footer>
+  </section>
+
+
+</div>
+
+<script>
+  removeSig()
+</script>

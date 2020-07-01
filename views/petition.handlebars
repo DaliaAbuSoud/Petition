@@ -1,0 +1,95 @@
+<div class="petition-body">
+
+    <section class="petition-wrapper">
+
+        <div class="petition-menu-line">
+            <a href="petition" class="petition-home-button">
+                <img src="/assets/home-btn.png" alt="home-button-image"></a>
+            <div class="petition-menuLinks">
+                <a href="/logout">Logout</a>
+                {{#if sigAvailable}}
+                <a href="/userProfile">Edit Profile</a>
+                <a href="/signers">Supporters</a>
+                {{/if}}
+
+
+            </div>
+        </div>
+
+
+        <section class="text-section">
+            <p class="The-Story"> The Story...</p>
+            <p>Dalia, 35 years old finance expert who moved from Jordan to Berlin in 2017.</p>
+            Finance in Deutsch is definitely not easy 😎 and it made it hard for her to find a job in finance.
+
+            In 2020, Dalia decieded not to stop and give up, but to dump finance and start all over again.
+            She then enrolled in a web development bootcamp.
+            Due to the lack in her tech knowlage, Dalia had to put extra effort to be able to graduate and become
+            a good web developer.<br>
+            On her 3rd week in this bootcamp, and for the purpose of better understanding and extra practice, Dalia
+            watched a YouTube video of how to build a Carousel to solve one of the daily exercises. She coded
+            along, learned
+            extra methods & finally added more code form what she have learned in class.
+            Unfortunately, some days later, Dalia was accused of commiting frogery in copying code and was banned
+            from getting a graduation certificate.<br>
+
+            This webiste is all done by Dalia, 2 weeks of sleepless nights working with JS, NodeJS, EXPRESS,
+            HANDLEBARS, HTTP Requests, APIs, JQuery, SQL, Testing, HTML & CSS
+            to mkae it as good as possible after
+            only 8 weeks in Tech-World!<br>
+            </p>
+            <p class="conclusion"> This Petiton is Dalia's Accredited Certificate!
+            </p>
+
+        </section>
+
+        {{#unless sigAvailable}}
+        <section class="signature-section">
+            <p class="sign-this">Hello {{firstName}}!<br><br>Please sign this petition, as a testimony from you, if you
+                think that Dalia did a good Job!</p>
+
+            <form class="sigForm">
+                <div class="canvas-wrapper">
+                    <canvas class="sig-canvas">
+                        <input type="image" name="sigImage" class="signatureUrl" required>
+                    </canvas>
+
+                    <canvas class="empty-canvas"></canvas>
+                </div>
+
+                <div class="errorMsg"> Please Sign Here!</div>
+
+                <div class="buttons">
+                    <button type="submit" class="submit-button">Submit</button>
+                    <button type="clear-sig" class="clear-sig">Clear Signature</button>
+                </div>
+            </form>
+        </section>
+        {{/unless}}
+
+        {{#if sigAvailable}}
+        <section class="alreadySigned">
+            <div class="helloUser">
+                <p> Welcome Back {{firstName}}!
+                    <p />
+            </div>
+            <p>You have signed this petition on: <strong>{{dateFormat ts "DD.MM.YYYY"}}</strong></p>
+            <p><strong>{{usersCount}}</strong> supporters have signed this petition</p>
+            <p class="seeAllSigners"><a href="/signers">See who signed along!</a> </p>
+
+        </section>
+        {{/if}}
+
+    </section>
+
+
+    <footer>
+        <p class="footer-text">© 2020 Dalia Abu-Soud</p>
+    </footer>
+    </section>
+</div>
+
+<script>
+    eSignature();
+    userSignature()
+</script>
