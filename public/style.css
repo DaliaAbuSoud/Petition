@@ -67,7 +67,7 @@ p {
     font-size: 20px;
     color: rgb(255, 255, 255);
     border: none;
-    border-bottom: 1px solid ivory;
+    border-bottom: 1px solid white;
     margin: 10px 0;
 }
 
@@ -158,45 +158,38 @@ footer {
 /****************************************************Log-In*****************************************************/
 .logInBody {
     background-image: url(./assets/login2.jpg);
-    background-repeat: no-repeat;
     background-size: cover;
 }
 
 .logInWrapper {
-    background-color: rgb(0, 0, 0, 0.5);
-    background-blend-mode: screen;
-    margin: 0;
+    background-color: rgb(0, 0, 0, 0.39);
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     color: rgb(255, 255, 245);
-    display: grid;
-    grid-template-columns: 45% 30% 1fr;
-    grid-template-rows: 40px auto auto 30px;
+    display: flex;
     height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h2 {
-    grid-area: 2 / 2 / 3 / 3;
     margin: 0;
-    padding-bottom: 10px;
-    align-items: flex-end;
-    font-style: italic;
+    padding-bottom: 30px;
+    text-align: center;
 }
-.logInSection {
-    grid-area: 3 / 2 / 4 / 3;
-    align-items: center;
-}
+
 .logIn-input-fields {
     display: grid;
     grid-template-rows: auto auto auto auto auto;
-    grid-template-columns: 20% 1fr;
-    color: ivory;
+    grid-template-columns: auto auto;
+    color: white;
 }
 .logIn-input-fields a {
     text-decoration: none;
-    color: ivory;
+    color: white;
     font-weight: bold;
     font-style: italic;
-    grid-area: 5 / 2 / 6 / 3;
+    grid-area: 5 / 1 / 6 / 3;
     justify-self: center;
     margin-top: 20px;
 }
@@ -210,28 +203,23 @@ label {
 .logIn-UserInput {
     height: 30px;
     background-color: transparent;
-    padding: 3px 10px 3px 10px;
+    padding: 0 10px;
     font-size: 16px;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
+    color: rgb(39, 38, 38);
     border: none;
-    border-bottom: 1px solid ivory;
+    border-bottom: 1px solid white;
     margin: 10px 25px 0 30px;
-    grid-column-start: 2;
-    grid-column-end: 3;
 }
 
 .incorrectPass {
     font-size: 18px;
-    color: white;
-    background-color: rgb(109, 1, 1);
     font-style: italic;
     align-items: center;
     justify-content: center;
     display: none;
-    grid-area: 3/2/4/3;
-    margin: 10px 25px 0 30px;
-    padding: 4px 10px;
+    grid-area: 3/1/4/3;
+    padding-top: 13px;
+    color: rgb(109, 1, 1);
 }
 
 .incorrectPass.on {
@@ -258,14 +246,15 @@ label {
 .logInBtn {
     height: 40px;
     width: 150px;
-    background-color: rgba(183, 184, 184, 0.109);
+    background-color: rgba(48, 132, 132, 0.109);
     font-size: 18px;
-    color: rgb(4, 66, 61);
+    color: rgb(10, 74, 69);
     text-decoration: none;
     margin: 50px auto 0 auto;
     align-items: center;
-    grid-area: 4 / 2 / 5 / 3;
+    grid-area: 4 / 1 / 5 / 3;
     border-radius: 10px;
+    border: 1px solid whitesmoke;
     transition: background-color 0.25s ease-in-out;
     cursor: pointer;
 }
@@ -276,17 +265,18 @@ label {
 
 /**************************************************** Petition *****************************************************/
 .petition-body {
-    background-image: url(./assets/jeshoots-com--2vD8lIhdnw-unsplash.jpg);
+    background-image: url(./assets/woman-in-white-long-sleeve-shirt-and-blue-denim-jeans-while-3792010.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
 }
 .petition-wrapper {
     height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     color: rgb(255, 255, 245);
     display: grid;
-    grid-template-columns: 65% auto;
-    grid-template-rows: auto 1fr 1fr 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content auto max-content;
 }
 
 p {
@@ -294,73 +284,59 @@ p {
 }
 .petition-menu-line {
     background-color: rgba(0, 0, 0, 0.205);
-    display: grid;
-    grid-template-columns: 80% auto;
-    grid-area: 1/1/2/3;
-    padding: 3px 20px 3px 20px;
+    grid-area: 1/1/2/4;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 .petition-home-button {
-    align-items: center;
     background-color: transparent;
     border-color: transparent;
-    grid-column-start: 1;
-    grid-column-end: 2;
 }
 
 .petition-home-button img {
     height: 30px;
     width: 30px;
-    justify-items: right;
 }
 .petition-menuLinks {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
-    align-self: center;
-    grid-column-start: 2;
-    grid-column-end: 3;
 }
 
 .petition-menuLinks a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
+    padding: 0 10px;
 }
 .text-section {
-    background-color: rgba(0, 0, 0, 0.527);
-    padding: 10px 40px 0px 40px;
-    grid-area: 3 / 1 / 4/ 3;
-    font-size: 20px;
+    padding: 20px;
+    grid-area: 2 / 1 / 3/ 2;
     line-height: 1.5;
     text-align: justify;
+    color: white;
 }
 
 .The-Story {
-    font-size: 42px;
-}
-
-.conclusion {
-    font-size: 26px;
-    font-style: italic;
-    text-align: center;
-    margin-top: 10px;
+    font-size: 32px;
 }
 
 .signature-section {
-    grid-area: 2 /2 /3 / 3;
-    text-align: center;
-    justify-self: flex-end;
+    grid-area: 2 /3 /3 / 4;
     color: rgb(61, 61, 61);
-    padding: 10px;
+    padding: 15px;
     border-radius: 25px;
-    margin: 40px 30px 10px 0;
+    align-self: center;
 }
 
 .sign-this {
-    font-size: 26px;
-    font-style: italic;
+    font-size: 20px;
+    line-height: 1.5;
     text-align: center;
+    color: white;
 }
 
 .canvas-wrapper {
@@ -370,7 +346,7 @@ p {
 }
 .sig-canvas {
     height: 120px;
-    background-color: rgba(151, 151, 151, 0.096);
+    background-color: rgba(255, 255, 255);
     border: 1px solid rgb(54, 54, 54);
     border-radius: 10px;
     font-size: 16px;
@@ -384,16 +360,14 @@ p {
 
 .errorMsg {
     font-size: 18px;
-    color: white;
-    background-color: rgba(109, 1, 1, 0.849);
+    color: rgba(255, 81, 81, 0.849);
     font-style: italic;
-    margin: 5px 0 5px 0;
+    padding: 5px 0;
     grid-column: 2 / 3;
     align-items: center;
     justify-content: center;
     height: 30px;
     display: none;
-    margin: 0 30px 0 30px;
 }
 
 .errorMsg.on {
@@ -404,52 +378,57 @@ p {
     grid-column-start: 2;
     display: grid;
     grid-template-columns: auto auto;
-    justify-content: center;
-    margin-top: 10px;
+    justify-content: space-around;
 }
 
 .submit-button {
     height: 40px;
     width: 150px;
-    background-color: rgba(22, 107, 96, 0.192);
+    background-color: rgba(27, 86, 72, 0.452);
     grid-column-start: 1;
-    font-size: 18px;
-    color: rgb(21, 85, 85);
+    font-size: 15px;
+    color: white;
     text-decoration: none;
+    border: 1px solid darkslategray;
     border-radius: 10px;
     transition: background-color 0.25s ease-in-out;
     cursor: pointer;
-    margin-right: 10px;
 }
+
 .submit-button:hover {
-    background-color: rgba(28, 88, 73, 0.452);
+    background-color: rgba(0, 150, 136, 0.74);
     color: white;
+    transform: scale(1.05);
 }
 
 .clear-sig {
     height: 40px;
     width: 150px;
-    background-color: rgba(22, 107, 96, 0.192);
+    background-color: rgba(255, 255, 255, 0.55);
     grid-column-start: 2;
-    font-size: 18px;
-    color: rgb(21, 85, 85);
+    font-size: 15px;
+    color: rgb(34, 87, 95);
+    border: 1px solid darkslategray;
     border-radius: 10px;
     transition: background-color 0.25s ease-in-out;
     cursor: pointer;
 }
+.clear-sig:hover {
+    transform: scale(1.05);
+    background-color: white;
+}
 
 .alreadySigned {
     border-radius: 25px;
-    font-size: 20px;
-    padding: 20px 20px 0 20px;
-    color: rgb(61, 61, 61);
+    font-size: 18px;
+    padding: 20px;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    grid-area: 2 /2 /3 / 3;
+    grid-area: 2 /3 /3 / 4;
     line-height: 2;
     align-self: center;
     justify-self: center;
     text-align: center;
-    margin-right: 30px;
 }
 .helloUser {
     font-style: italic;
@@ -458,10 +437,14 @@ p {
     line-height: 1.5;
     grid-area: 2 /2 /3 / 3;
 }
+.userCount {
+    font-size: 22;
+    font-style: italic;
+}
 .seeAllSigners a {
     text-decoration: underline;
-    color: rgb(31, 31, 31);
-    font-weight: bold;
+    color: white;
+    font-size: 22px;
     font-style: italic;
 }
 .unSign-editProfile a {
@@ -470,6 +453,9 @@ p {
     color: rgb(61, 61, 0);
     font-size: 16px;
     margin-top: 30px;
+}
+.petitionFooter {
+    grid-area: 3/ 1 / 4/ 4;
 }
 
 /****************************************************THANK-YOU*****************************************************/
@@ -483,7 +469,7 @@ p {
 
 .thanks-wrapper {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    color: ivory;
+    color: white;
     height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr 30px;
@@ -521,7 +507,7 @@ p {
 
 .thanks-menuLinks a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
 }
@@ -554,7 +540,7 @@ p {
     justify-self: center;
     text-align: center;
     line-height: 1.5;
-    color: ivory;
+    color: white;
     font-style: italic;
     text-align: center;
 }
@@ -562,7 +548,7 @@ p {
 .tellUs a {
     margin-top: 20px;
     font-style: italic;
-    color: ivory;
+    color: white;
     margin-bottom: 20px;
     font-size: 22px;
 }
@@ -618,7 +604,7 @@ p {
 
 .signers-menuLinks a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
 }
@@ -628,7 +614,7 @@ p {
     font-size: 42px;
     font-weight: bold;
     font-style: italic;
-    color: ivory;
+    color: white;
     grid-area: 2/2/3/3;
 }
 
@@ -644,12 +630,12 @@ p {
 .signersTable {
     grid-row-start: 3;
     grid-row-end: 4;
-    color: ivory;
+    color: white;
 }
 
 .signersTable a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: underlined;
     font-style: italic;
@@ -659,7 +645,7 @@ p {
     font-size: 18px;
     display: grid;
     grid-template-columns: 1% 25% 15% 15% 15% 29%;
-    color: ivory;
+    color: white;
 }
 
 .name {
@@ -732,7 +718,7 @@ p {
 
 .bycity-menuLinks a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
 }
@@ -749,7 +735,7 @@ p {
 .bycityTable {
     grid-row-start: 3;
     grid-row-end: 4;
-    color: ivory;
+    color: white;
 }
 
 .bycityFooter {
@@ -800,13 +786,13 @@ p {
 
 .bycountry-menuLinks a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
 }
 .back {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: underline;
     font-style: italic;
@@ -826,7 +812,7 @@ p {
 .bycountryTable {
     grid-row-start: 3;
     grid-row-end: 4;
-    color: ivory;
+    color: white;
 }
 
 .bycountryFooter {
@@ -882,7 +868,7 @@ p {
 
 .userProfile-menuLinks a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
 }
@@ -919,7 +905,7 @@ p {
     align-items: center;
     justify-self: flex-start;
     grid-area: 9 / 2 / 10 / 3;
-    border: 1px solid ivory;
+    border: 1px solid white;
     border-radius: 5px;
     background-color: transparent;
     transition: background-color 0.25s ease-in-out;
@@ -949,10 +935,10 @@ p {
     background-color: transparent;
     padding: 3px 10px 3px 10px;
     font-size: 16px;
-    color: ivory;
+    color: white;
     font-weight: bold;
     border: none;
-    border-bottom: 1px solid ivory;
+    border-bottom: 1px solid white;
     margin: 10px 25px 0 30px;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -981,7 +967,7 @@ p {
 
 .return {
     text-decoration: none;
-    color: ivory;
+    color: white;
     font-size: 22px;
     text-decoration: none;
     margin: 10px 25px 0 30px;
@@ -993,7 +979,7 @@ p {
 }
 .unsign {
     text-decoration: none;
-    color: ivory;
+    color: white;
     font-size: 16px;
     margin: 10px 25px 0 30px;
     align-self: center;
@@ -1016,7 +1002,7 @@ p {
 
 .unsign-wrapper {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    color: ivory;
+    color: white;
     height: 100vh;
     display: grid;
     grid-template-rows: 40px auto 30px;
@@ -1054,7 +1040,7 @@ p {
 
 .unsign-menuLinks a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
 }
@@ -1188,5 +1174,8 @@ p {
     }
     footer {
         grid-area: 2/ 1 / 3/ 2;
+    }
+    .logInBody {
+        background-position: center;
     }
 }
