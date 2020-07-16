@@ -18,8 +18,9 @@
 
 
         <section class="text-section">
-            <p class="The-Story"> The Story...</p>
-            <p><br>A 35 years old finance expert who moved from the Middle East to Germany in 2017.
+            <p class="hello-name-responsive">Hello {{firstName}}! </p><br>
+            <br><p class="The-Story"> The Story...</p>
+            <p class="the-text">A 35 years old finance expert who moved from the Middle East to Germany in 2017.
             Finance in Deutsch is definitely not easy 😎 which made it hard for her to find a job in the field of her experties.
 
             In 2020, she decieded not to stop and not give up but to dump finance and to start all over again.
@@ -35,9 +36,9 @@
 
         {{#unless sigAvailable}}
         <section class="signature-section">
-            <p class="sign-this">Hello {{firstName}}! <br>
-                <br>This webiste was all built by this lady.
-                <br>Two weeks of hard work and sleepless nights.
+            <p class="hello-name">Hello {{firstName}}! <br></p>
+                <br><p class="sign-this">This webiste was built by this lady...
+                <br>Weeks of hard work & sleepless nights...<br>
                 <br>Please sign this petition if you think that she did a good Job!
                 {{!-- <br>This Petiton Will Be Her Accredited Certificate! --}}
             </p>
@@ -51,7 +52,7 @@
                     <canvas class="empty-canvas"></canvas>
                 </div>
 
-                <div class="errorMsg"> Please sign inside the white box before submitting.</div>
+                <div class="errorMsg"> Please sign in the white box before submitting.</div>
 
                 <div class="buttons">
                     <button type="submit" class="submit-button">Submit</button>
