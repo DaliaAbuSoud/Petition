@@ -846,7 +846,6 @@ p {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 40px auto auto auto 30px;
-    height: 100vh;
 }
 .userProfile-menu-line {
     background-color: rgba(0, 0, 0, 0.205);
@@ -1180,29 +1179,33 @@ p {
     .petition-wrapper {
         min-height: 100vh;
         grid-template-columns: auto;
-        grid-template-rows: auto auto auto auto;
+        grid-template-rows: auto auto auto auto auto;
         background-color: rgba(0, 0, 0, 0.32941176470588235);
     }
     .petition-menu-line {
         grid-area: 1/1/2/2;
         background-color: rgb(29, 26, 26);
     }
-    .text-section {
-        grid-area: 2/1/3/2;
-    }
-    .signature-section {
-        grid-area: 3/1/4/2;
-    }
-    .sign-this {
-        font-size: 18px;
+    .petition-menuLinks a {
+        font-size: 15px;
     }
     .hello-name {
         display: none;
     }
     .hello-name-responsive {
+        grid-area: 2/1/3/2;
         display: block;
         font-size: 20px;
         font-style: italic;
+    }
+    .text-section {
+        grid-area: 3/1/4/2;
+    }
+    .signature-section {
+        grid-area: 4/1/5/2;
+    }
+    .sign-this {
+        font-size: 18px;
     }
     .submit-button {
         border: 1px solid rgb(186, 197, 197);
@@ -1213,8 +1216,84 @@ p {
         background-color: rgba(197, 12, 12, 0.54);
         margin: 20px;
     }
+    .alreadySigned {
+        font-size: 17px;
+        grid-area: 2/1/3/2;
+    }
+    .helloUser {
+        font-size: 20px;
+    }
+    .seeAllSigners a {
+        font-size: 17px;
+    }
     .petitionFooter {
-        grid-area: 4/1/5/2;
+        grid-area: 5/1/6/2;
+    }
+
+    /* *********************** User Profile Responsive ********************** */
+    .userProfileBody {
+        height: auto;
+        min-width: fit-content;
+    }
+    .userProfileWrapper {
+        grid-template-columns: auto;
+        grid-template-rows: min-content auto auto auto min-content;
+        min-height: 100vh;
+    }
+    .userProfile-menu-line {
+        grid-area: 1/1/2/2;
+        padding: 5px;
+        grid-template-columns: auto auto;
+    }
+    .userProfile-home-button {
+        align-self: center;
+    }
+    .userProfile-home-button img {
+        height: 25px;
+        width: 25px;
+        align-self: center;
+    }
+    .userProfile-menuLinks {
+        justify-content: flex-start;
+    }
+    .userProfile-menuLinks a {
+        font-size: 17px;
+        padding: 5px;
+    }
+    .userProfileHeader {
+        font-size: 28px;
+    }
+    .userProfileSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .editProfileBtn {
+        background-color: rgba(255, 250, 250, 0.76);
+        height: 30px;
+        width: 305px;
+        margin: 10px;
+    }
+    .userProfile-InputFields {
+        padding: 15px;
+    }
+    .profileSubmitBtn {
+        height: 34px;
+        width: 120px;
+        background-color: rgba(255, 255, 255, 0.35);
+        font-size: 16px;
+        margin: 10px;
+        border: 2px solid white;
+    }
+    .return {
+        font-size: 19px;
+        padding: 10px;
+    }
+    .userProfileFooter {
+        padding: 5px;
+    }
+    .footer-text {
+        margin: 0;
     }
 }
 
@@ -1257,7 +1336,7 @@ p {
     .petition-wrapper {
         /* height: auto; */
         grid-template-columns: auto;
-        grid-template-rows: auto 1fr 1fr auto;
+        grid-template-rows: auto auto 1fr 1fr auto;
         background-color: rgba(0, 0, 0, 0.32941176470588235);
     }
     .petition-menu-line {
@@ -1271,14 +1350,24 @@ p {
     .petition-menuLinks a {
         font-size: 24px;
     }
-    .text-section {
+    .alreadySigned {
+        font-size: 30px;
         grid-area: 2/1/3/2;
+    }
+    .helloUser {
+        font-size: 34px;
+    }
+    .seeAllSigners a {
+        font-size: 28px;
+    }
+    .text-section {
+        grid-area: 3/1/4/2;
     }
     .the-text {
         font-size: 22px;
     }
     .signature-section {
-        grid-area: 3/1/4/2;
+        grid-area: 4/1/5/2;
         /* align-self: flex-start; */
     }
     .sign-this {
@@ -1308,10 +1397,86 @@ p {
         margin: 20px;
     }
     .petitionFooter {
-        grid-area: 4/1/5/2;
+        grid-area: 5/1/6/2;
     }
     .footer-text {
         font-size: 19px;
         margin: 4px;
+    }
+    /* *********************** User Profile Responsive ********************** */
+    .userProfileBody {
+        height: auto;
+        min-width: fit-content;
+    }
+    .userProfileWrapper {
+        grid-template-columns: auto;
+        grid-template-rows: min-content auto auto auto min-content;
+        min-height: 100vh;
+    }
+    .userProfile-menu-line {
+        grid-area: 1/1/2/2;
+        padding: 10px;
+        grid-template-columns: auto auto;
+    }
+    .userProfile-home-button {
+        align-self: center;
+    }
+    .userProfile-home-button img {
+        height: 25px;
+        width: 25px;
+        align-self: center;
+    }
+    .userProfile-menuLinks {
+        justify-content: flex-start;
+    }
+    .userProfile-menuLinks a {
+        font-size: 24px;
+        padding: 5px;
+    }
+    .userProfileHeader {
+        font-size: 38px;
+    }
+    .userProfileSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .editProfileBtn {
+        background-color: rgba(255, 250, 250, 0.76);
+        height: 30px;
+        width: 305px;
+        margin: 10px;
+        font-size: 22px;
+    }
+    .userProfile-InputFields {
+        padding: 15px;
+    }
+    .userProfile-InputFields label {
+        font-size: 24px;
+    }
+    .profileUserInput {
+        font-size: 22px;
+        padding: 10px;
+    }
+    .profileSubmitBtn {
+        height: 40px;
+        width: 140px;
+        background-color: rgba(255, 255, 255, 0.35);
+        font-size: 26px;
+        margin: 40px;
+        border: 2px solid white;
+    }
+    .return {
+        font-size: 29px;
+        padding: 10px;
+    }
+    .unsign {
+        font-size: 22px;
+    }
+    .userProfileFooter {
+        padding: 10px;
+    }
+    .footer-text {
+        margin: 0;
     }
 }
