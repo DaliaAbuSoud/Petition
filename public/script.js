@@ -239,7 +239,7 @@ editUserProfile = () => {
         const dataToSend = {
             firstName: document.querySelector('input[name="firstName"]').value,
             lastName: document.querySelector('input[name="lastName"]').value,
-            password: document.querySelector('input[name="password"]').value,
+            // password: document.querySelector('input[name="password"]').value,
             city: document.querySelector('input[name="city"]').value,
             country: document.querySelector('input[name="country"]').value,
             age: document.querySelector('input[name="age"]').value,
