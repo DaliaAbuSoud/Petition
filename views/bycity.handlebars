@@ -5,10 +5,8 @@
       <img src="/assets/home-btn.png" alt="home-button-image"></a>
     <div class="bycity-menuLinks">
       <a href="/logout">Logout</a>
-      <a href="/unsign">Un-Sign</a>
       <a href="/userProfile">Edit Profile</a>
       <a href="/signers">Supporters</a>
-      <a href="/petition">Petition</a>
     </div>
   </div>
 
@@ -26,13 +24,13 @@
           <p class="city">{{city}}</p>
           <p class="country">{{country}}</p>
           <p class="age">{{age}} years old</p>
-          <p class="dataAndTime">Signed on {{dateFormat ts "Do.MM.YYYY"}}</p>
+          <p class="dateAndTime">Signed on {{dateFormat ts "Do.MM.YYYY"}}</p>
         </div>
       </li>
       {{/signersData}}
       </ol>
   </section>
-  <footer class="bycity">
+  <footer class="bycity-footer">
     <p class="footer-text">© 2020 Dalia Abu-Soud</p>
   </footer>
 </div>

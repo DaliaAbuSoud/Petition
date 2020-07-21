@@ -570,22 +570,22 @@ p {
 /****************************************************signers*****************************************************/
 
 .signers-body {
-    background-image: url(./assets/support7.jpg);
+    background-image: url(./assets/annie-spratt-g5DkG2ZF7ZY-unsplash.jpg);
     height: 100vh;
     width: 100%;
     background-blend-mode: screen;
     display: grid;
-    grid-template-rows: 40px 15% auto 30px;
-    grid-template-columns: 20% 1fr 20%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .signers-menu-line {
     background-color: rgba(0, 0, 0, 0.205);
     display: grid;
-    grid-template-columns: 90% auto;
-    grid-area: 1/1/2/5;
-    padding: 3px 20px 3px 20px;
+    grid-template-columns: auto auto;
+    grid-area: 1/1/2/2;
+    padding: 10px;
 }
 .signers-home-button {
     align-items: center;
@@ -603,7 +603,7 @@ p {
 .signers-menuLinks {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-self: center;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -614,6 +614,7 @@ p {
     color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
+    padding: 10px;
 }
 .supporters-list {
     align-self: center;
@@ -622,16 +623,18 @@ p {
     font-weight: bold;
     font-style: italic;
     color: white;
-    grid-area: 2/2/3/3;
+    grid-area: 2/1/3/2;
 }
 
 .signers-wrapper {
-    background-color: rgba(37, 37, 37, 0.623);
+    background-color: rgba(37, 37, 37, 0.31);
     border-radius: 25px;
-    grid-area: 3/ 2/4/3;
-    margin: 0 30px 15px 30px;
+    grid-area: 3/ 1/4/2;
+    margin: 30px;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     overflow-y: scroll;
+    overflow-x: scroll;
+    justify-self: center;
 }
 
 .signersTable {
@@ -651,54 +654,64 @@ p {
     line-height: 2;
     font-size: 18px;
     display: grid;
-    grid-template-columns: 1% 25% 15% 15% 15% 29%;
+    grid-template-columns: fit-content fit-content fit-content fit-content fit-content fit-content;
     color: white;
 }
 
 .name {
     grid-column-start: 2;
     grid-column-end: 3;
+    padding: 10px;
+    text-align: left;
 }
 
 .city {
     grid-column-start: 3;
     grid-column-end: 4;
+    padding: 10px;
+    text-align: left;
 }
 .country {
     grid-column-start: 4;
     grid-column-end: 5;
+    padding: 10px;
+    text-align: left;
 }
 .age {
     grid-column-start: 5;
     grid-column-end: 6;
+    padding: 10px;
+    text-align: left;
 }
 .dateAndTime {
     grid-column-start: 6;
     grid-column-end: 7;
     text-align: end;
+    padding: 10px;
+    text-align: left;
 }
 .signersFooter {
-    grid-area: 4/1/5/4s;
+    grid-area: 4/1/5/2;
 }
 
 /**************************************************** ByCity  *****************************************************/
 
 .bycity-body {
-    background-image: url(./assets/support7.jpg);
+    background-image: url(./assets/annie-spratt-g5DkG2ZF7ZY-unsplash.jpg);
     height: 100vh;
     width: 100%;
     background-blend-mode: screen;
     display: grid;
-    grid-template-rows: 40px 15% auto 30px;
-    grid-template-columns: 20% 1fr 20%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .bycity-menu-line {
     background-color: rgba(0, 0, 0, 0.205);
     display: grid;
-    grid-template-columns: 75% auto;
-    grid-area: 1/1/2/5;
+    grid-template-columns: auto auto;
+    grid-area: 1/1/2/2;
     padding: 3px 20px 3px 20px;
 }
 .bycity-home-button {
@@ -717,7 +730,7 @@ p {
 .bycity-menuLinks {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: left;
     align-self: center;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -728,12 +741,13 @@ p {
     color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
+    padding: 10px;
 }
 
 .bycity-wrapper {
-    background-color: rgba(37, 37, 37, 0.623);
+    background-color: rgba(37, 37, 37, 0.31);
     border-radius: 25px;
-    grid-area: 3/ 2/4/3;
+    grid-area: 3/ 1/4/2;
     margin: 0 30px 15px 30px;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     overflow-y: scroll;
@@ -745,28 +759,28 @@ p {
     color: white;
 }
 
-.bycityFooter {
-    grid-area: 4/1/5/4s;
+.bycity-footer {
+    grid-area: 4/1/5/2;
 }
 
 /**************************************************** ByCountry  *****************************************************/
 
 .bycountry-body {
-    background-image: url(./assets/support7.jpg);
+    background-image: url(./assets/annie-spratt-g5DkG2ZF7ZY-unsplash.jpg);
     height: 100vh;
     width: 100%;
     background-blend-mode: screen;
     display: grid;
-    grid-template-rows: 40px 15% auto 30px;
-    grid-template-columns: 20% 1fr 20%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .bycountry-menu-line {
     background-color: rgba(0, 0, 0, 0.205);
     display: grid;
-    grid-template-columns: 75% auto;
-    grid-area: 1/1/2/5;
+    grid-template-columns: auto auto;
+    grid-area: 1/1/2/2;
     padding: 3px 20px 3px 20px;
 }
 .bycountry-home-button {
@@ -785,7 +799,7 @@ p {
 .bycountry-menuLinks {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: left;
     align-self: center;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -796,6 +810,7 @@ p {
     color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
+    padding: 10px;
 }
 .back {
     font-size: 18px;
@@ -803,14 +818,14 @@ p {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: underline;
     font-style: italic;
-    grid-area: 2/2/3/3;
+    grid-area: 2/1/3/2;
     align-self: end;
     margin: 0 0 10px 40px;
 }
 .bycountry-wrapper {
-    background-color: rgba(37, 37, 37, 0.623);
+    background-color: rgba(37, 37, 37, 0.31);
     border-radius: 25px;
-    grid-area: 3/ 2/4/3;
+    grid-area: 3/ 1/4/2;
     margin: 0 30px 15px 30px;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     overflow-y: scroll;
@@ -822,8 +837,8 @@ p {
     color: white;
 }
 
-.bycountryFooter {
-    grid-area: 4/1/5/4s;
+.bycountry-footer {
+    grid-area: 4/1/5/2;
 }
 
 /**************************************************** Users Profile *****************************************************/
@@ -1328,6 +1343,92 @@ p {
     .userSigPic {
         background-color: rgba(243, 243, 243, 0.82);
     }
+    /* *********************** Signers Responsive ********************** */
+    .signers-body {
+        width: max-content;
+        height: auto;
+    }
+    .signers-menuLinks a {
+        font-size: 15px;
+        padding: 5px;
+    }
+    .signers-wrapper {
+        margin: 20px;
+    }
+    .supporters-list {
+        font-size: 22px;
+    }
+
+    /**************************************************** ByCity  *****************************************************/
+    .bycity-menu-line {
+        padding: 3px 10px;
+    }
+    .bycity-menuLinks a {
+        font-size: 15px;
+        padding: 5px;
+    }
+    .bycity-home-button img {
+        height: 25px;
+        width: 25px;
+    }
+    .supporters-list {
+        margin: 30px 0px;
+    }
+    .back {
+        margin: 15px;
+    }
+    .bycity-wrapper {
+        margin: 15px;
+    }
+    .bycityTable {
+        font-size: 13px;
+        padding-left: 20px;
+    }
+    .li {
+        font-size: 15px;
+        grid-template-columns: max-content max-content max-content max-content max-content max-content;
+    }
+    .name,
+    .city,
+    .country,
+    .age {
+        padding: 5px;
+    }
+    /**************************************************** ByCountry  *****************************************************/
+    .bycountry-menu-line {
+        padding: 3px 10px;
+    }
+    .bycountry-menuLinks a {
+        font-size: 15px;
+        padding: 5px;
+    }
+    .bycountry-home-button img {
+        height: 25px;
+        width: 25px;
+    }
+    .supporters-list {
+        margin: 30px 0px;
+    }
+    .back {
+        margin: 15px;
+    }
+    .bycountry-wrapper {
+        margin: 15px;
+    }
+    .bycountryTable {
+        font-size: 13px;
+        padding-left: 20px;
+    }
+    .li {
+        font-size: 15px;
+        grid-template-columns: max-content max-content max-content max-content max-content max-content;
+    }
+    .name,
+    .city,
+    .country,
+    .age {
+        padding: 5px;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -1537,6 +1638,12 @@ p {
         background-position: top;
     }
     .unsign-menuLinks a {
+        font-size: 22px;
+    }
+
+    /* *********************** Signers Responsive ********************** */
+
+    .signers-menuLinks a {
         font-size: 22px;
     }
 }
