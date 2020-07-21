@@ -4,7 +4,7 @@ body {
 }
 .signup-body {
     background-image: url(./assets/climb1.jpg);
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     grid-template-rows: auto auto;
@@ -67,7 +67,7 @@ p {
     font-size: 20px;
     color: rgb(255, 255, 255);
     border: none;
-    border-bottom: 1px solid ivory;
+    border-bottom: 1px solid white;
     margin: 10px 0;
 }
 
@@ -158,45 +158,38 @@ footer {
 /****************************************************Log-In*****************************************************/
 .logInBody {
     background-image: url(./assets/login2.jpg);
-    background-repeat: no-repeat;
     background-size: cover;
 }
 
 .logInWrapper {
-    background-color: rgb(0, 0, 0, 0.5);
-    background-blend-mode: screen;
-    margin: 0;
+    background-color: rgb(0, 0, 0, 0.39);
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     color: rgb(255, 255, 245);
-    display: grid;
-    grid-template-columns: 45% 30% 1fr;
-    grid-template-rows: 40px auto auto 30px;
+    display: flex;
     height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h2 {
-    grid-area: 2 / 2 / 3 / 3;
     margin: 0;
-    padding-bottom: 10px;
-    align-items: flex-end;
-    font-style: italic;
+    padding-bottom: 30px;
+    text-align: center;
 }
-.logInSection {
-    grid-area: 3 / 2 / 4 / 3;
-    align-items: center;
-}
+
 .logIn-input-fields {
     display: grid;
     grid-template-rows: auto auto auto auto auto;
-    grid-template-columns: 20% 1fr;
-    color: ivory;
+    grid-template-columns: auto auto;
+    color: white;
 }
 .logIn-input-fields a {
     text-decoration: none;
-    color: ivory;
+    color: white;
     font-weight: bold;
     font-style: italic;
-    grid-area: 5 / 2 / 6 / 3;
+    grid-area: 5 / 1 / 6 / 3;
     justify-self: center;
     margin-top: 20px;
 }
@@ -210,28 +203,23 @@ label {
 .logIn-UserInput {
     height: 30px;
     background-color: transparent;
-    padding: 3px 10px 3px 10px;
+    padding: 0 10px;
     font-size: 16px;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
+    color: rgb(39, 38, 38);
     border: none;
-    border-bottom: 1px solid ivory;
+    border-bottom: 1px solid white;
     margin: 10px 25px 0 30px;
-    grid-column-start: 2;
-    grid-column-end: 3;
 }
 
 .incorrectPass {
     font-size: 18px;
-    color: white;
-    background-color: rgb(109, 1, 1);
     font-style: italic;
     align-items: center;
     justify-content: center;
     display: none;
-    grid-area: 3/2/4/3;
-    margin: 10px 25px 0 30px;
-    padding: 4px 10px;
+    grid-area: 3/1/4/3;
+    padding-top: 13px;
+    color: rgb(109, 1, 1);
 }
 
 .incorrectPass.on {
@@ -258,14 +246,15 @@ label {
 .logInBtn {
     height: 40px;
     width: 150px;
-    background-color: rgba(183, 184, 184, 0.109);
+    background-color: rgba(48, 132, 132, 0.109);
     font-size: 18px;
-    color: rgb(4, 66, 61);
+    color: rgb(10, 74, 69);
     text-decoration: none;
     margin: 50px auto 0 auto;
     align-items: center;
-    grid-area: 4 / 2 / 5 / 3;
+    grid-area: 4 / 1 / 5 / 3;
     border-radius: 10px;
+    border: 1px solid whitesmoke;
     transition: background-color 0.25s ease-in-out;
     cursor: pointer;
 }
@@ -276,17 +265,18 @@ label {
 
 /**************************************************** Petition *****************************************************/
 .petition-body {
-    background-image: url(./assets/jeshoots-com--2vD8lIhdnw-unsplash.jpg);
+    background-image: url(./assets/woman-in-white-long-sleeve-shirt-and-blue-denim-jeans-while-3792010.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
 }
 .petition-wrapper {
-    height: 100vh;
+    min-height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     color: rgb(255, 255, 245);
     display: grid;
-    grid-template-columns: 65% auto;
-    grid-template-rows: auto 1fr 1fr 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: max-content auto max-content;
 }
 
 p {
@@ -294,73 +284,68 @@ p {
 }
 .petition-menu-line {
     background-color: rgba(0, 0, 0, 0.205);
-    display: grid;
-    grid-template-columns: 80% auto;
-    grid-area: 1/1/2/3;
-    padding: 3px 20px 3px 20px;
+    grid-area: 1/1/2/4;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 .petition-home-button {
-    align-items: center;
     background-color: transparent;
     border-color: transparent;
-    grid-column-start: 1;
-    grid-column-end: 2;
 }
 
 .petition-home-button img {
     height: 30px;
     width: 30px;
-    justify-items: right;
 }
 .petition-menuLinks {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
-    align-self: center;
-    grid-column-start: 2;
-    grid-column-end: 3;
 }
 
 .petition-menuLinks a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
+    padding: 0 10px;
 }
 .text-section {
-    background-color: rgba(0, 0, 0, 0.527);
-    padding: 10px 40px 0px 40px;
-    grid-area: 3 / 1 / 4/ 3;
-    font-size: 20px;
+    padding: 20px;
+    grid-area: 2 / 1 / 3/ 2;
     line-height: 1.5;
     text-align: justify;
+    color: white;
 }
 
 .The-Story {
-    font-size: 42px;
-}
-
-.conclusion {
-    font-size: 26px;
-    font-style: italic;
-    text-align: center;
-    margin-top: 10px;
+    font-size: 32px;
 }
 
 .signature-section {
-    grid-area: 2 /2 /3 / 3;
-    text-align: center;
-    justify-self: flex-end;
+    grid-area: 2 /3 /3 / 4;
     color: rgb(61, 61, 61);
-    padding: 10px;
+    padding: 15px;
     border-radius: 25px;
-    margin: 40px 30px 10px 0;
+    align-self: center;
 }
-
-.sign-this {
-    font-size: 26px;
-    font-style: italic;
+.hello-name {
+    font-size: 20px;
+    line-height: 1.5;
     text-align: center;
+    color: white;
+    display: block;
+}
+.hello-name-responsive {
+    display: none;
+}
+.sign-this {
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+    color: white;
 }
 
 .canvas-wrapper {
@@ -370,7 +355,7 @@ p {
 }
 .sig-canvas {
     height: 120px;
-    background-color: rgba(151, 151, 151, 0.096);
+    background-color: rgba(255, 255, 255);
     border: 1px solid rgb(54, 54, 54);
     border-radius: 10px;
     font-size: 16px;
@@ -384,16 +369,14 @@ p {
 
 .errorMsg {
     font-size: 18px;
-    color: white;
-    background-color: rgba(109, 1, 1, 0.849);
+    color: rgba(255, 81, 81, 0.849);
     font-style: italic;
-    margin: 5px 0 5px 0;
+    padding: 5px 0;
     grid-column: 2 / 3;
     align-items: center;
     justify-content: center;
     height: 30px;
     display: none;
-    margin: 0 30px 0 30px;
 }
 
 .errorMsg.on {
@@ -405,51 +388,58 @@ p {
     display: grid;
     grid-template-columns: auto auto;
     justify-content: center;
-    margin-top: 10px;
 }
 
 .submit-button {
     height: 40px;
     width: 150px;
-    background-color: rgba(22, 107, 96, 0.192);
+    background-color: rgba(27, 86, 72, 0.452);
     grid-column-start: 1;
-    font-size: 18px;
-    color: rgb(21, 85, 85);
+    font-size: 15px;
+    color: white;
     text-decoration: none;
+    border: 1px solid darkslategray;
     border-radius: 10px;
     transition: background-color 0.25s ease-in-out;
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 20px;
 }
+
 .submit-button:hover {
-    background-color: rgba(28, 88, 73, 0.452);
+    background-color: rgba(0, 150, 136, 0.74);
     color: white;
+    transform: scale(1.05);
 }
 
 .clear-sig {
     height: 40px;
     width: 150px;
-    background-color: rgba(22, 107, 96, 0.192);
+    background-color: rgba(255, 255, 255, 0.55);
     grid-column-start: 2;
-    font-size: 18px;
-    color: rgb(21, 85, 85);
+    font-size: 15px;
+    color: rgb(34, 87, 95);
+    border: 1px solid darkslategray;
     border-radius: 10px;
     transition: background-color 0.25s ease-in-out;
     cursor: pointer;
+    margin-left: 20px;
+}
+.clear-sig:hover {
+    transform: scale(1.05);
+    background-color: white;
 }
 
 .alreadySigned {
     border-radius: 25px;
-    font-size: 20px;
-    padding: 20px 20px 0 20px;
-    color: rgb(61, 61, 61);
+    font-size: 18px;
+    padding: 20px;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    grid-area: 2 /2 /3 / 3;
+    grid-area: 2 /3 /3 / 4;
     line-height: 2;
     align-self: center;
     justify-self: center;
     text-align: center;
-    margin-right: 30px;
 }
 .helloUser {
     font-style: italic;
@@ -458,10 +448,14 @@ p {
     line-height: 1.5;
     grid-area: 2 /2 /3 / 3;
 }
+.userCount {
+    font-size: 22;
+    font-style: italic;
+}
 .seeAllSigners a {
     text-decoration: underline;
-    color: rgb(31, 31, 31);
-    font-weight: bold;
+    color: white;
+    font-size: 22px;
     font-style: italic;
 }
 .unSign-editProfile a {
@@ -471,30 +465,35 @@ p {
     font-size: 16px;
     margin-top: 30px;
 }
+.petitionFooter {
+    grid-area: 3/ 1 / 4/ 4;
+}
 
 /****************************************************THANK-YOU*****************************************************/
 
 .thanks-body {
-    background-image: url(./assets/thanks2.jpg);
+    background-image: url(./assets/bouquet-bunch-of-flowers-flowers-holding-6742.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    background-position: center;
+    min-height: 100vh;
 }
 
 .thanks-wrapper {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    color: ivory;
-    height: 100vh;
+    color: white;
+    min-height: 100vh;
     display: grid;
-    grid-template-rows: auto 1fr 30px;
-    grid-template-columns: 35% 1fr 35%;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: auto;
+    background-color: rgb(0, 0, 0, 0.32);
 }
 
 .thanks-menu-line {
     background-color: rgba(0, 0, 0, 0.205);
     display: grid;
-    grid-template-columns: 93% auto;
-    grid-area: 1/1/2/4;
+    grid-template-columns: auto auto;
+    grid-area: 1/1/2/2;
     padding: 3px 20px 3px 20px;
 }
 .thanks-home-button {
@@ -521,53 +520,47 @@ p {
 
 .thanks-menuLinks a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
 }
 
 .thanks-section {
-    grid-area: 2/1/3/2;
     font-size: 28px;
-    font-style: italic;
-    margin-left: 30px;
-    align-self: center;
-    justify-self: center;
     text-align: center;
-    line-height: 1.5;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.userSigPic {
-    background-color: rgba(211, 210, 167, 0.342);
+.thanks-userSigPic {
+    background-color: rgba(255, 255, 255, 0.95);
     border-radius: 25px;
     padding: 10px;
     height: 80px;
-    width: 250px;
+    width: 330px;
     margin-top: 20px;
 }
 
 .signers {
     margin: 30px;
-    grid-area: 2/3/3/4;
     font-size: 28px;
     align-self: center;
     justify-self: center;
     text-align: center;
     line-height: 1.5;
-    color: ivory;
-    font-style: italic;
+    color: white;
     text-align: center;
 }
 
 .tellUs a {
-    margin-top: 20px;
-    font-style: italic;
-    color: ivory;
-    margin-bottom: 20px;
+    color: white;
     font-size: 22px;
 }
 .thanksFooter {
-    grid-area: 3/1/4/4;
+    grid-area: 3/1/4/2;
 }
 .footer-text {
     margin-left: 10px;
@@ -577,22 +570,22 @@ p {
 /****************************************************signers*****************************************************/
 
 .signers-body {
-    background-image: url(./assets/support7.jpg);
+    background-image: url(./assets/annie-spratt-g5DkG2ZF7ZY-unsplash.jpg);
     height: 100vh;
     width: 100%;
     background-blend-mode: screen;
     display: grid;
-    grid-template-rows: 40px 15% auto 30px;
-    grid-template-columns: 20% 1fr 20%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .signers-menu-line {
     background-color: rgba(0, 0, 0, 0.205);
     display: grid;
-    grid-template-columns: 90% auto;
-    grid-area: 1/1/2/5;
-    padding: 3px 20px 3px 20px;
+    grid-template-columns: auto auto;
+    grid-area: 1/1/2/2;
+    padding: 10px;
 }
 .signers-home-button {
     align-items: center;
@@ -610,7 +603,7 @@ p {
 .signers-menuLinks {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-self: center;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -618,9 +611,10 @@ p {
 
 .signers-menuLinks a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
+    padding: 10px;
 }
 .supporters-list {
     align-self: center;
@@ -628,28 +622,30 @@ p {
     font-size: 42px;
     font-weight: bold;
     font-style: italic;
-    color: ivory;
-    grid-area: 2/2/3/3;
+    color: white;
+    grid-area: 2/1/3/2;
 }
 
 .signers-wrapper {
-    background-color: rgba(37, 37, 37, 0.623);
+    background-color: rgba(37, 37, 37, 0.31);
     border-radius: 25px;
-    grid-area: 3/ 2/4/3;
-    margin: 0 30px 15px 30px;
+    grid-area: 3/ 1/4/2;
+    margin: 30px;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     overflow-y: scroll;
+    overflow-x: scroll;
+    justify-self: center;
 }
 
 .signersTable {
     grid-row-start: 3;
     grid-row-end: 4;
-    color: ivory;
+    color: white;
 }
 
 .signersTable a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: underlined;
     font-style: italic;
@@ -658,54 +654,64 @@ p {
     line-height: 2;
     font-size: 18px;
     display: grid;
-    grid-template-columns: 1% 25% 15% 15% 15% 29%;
-    color: ivory;
+    grid-template-columns: fit-content fit-content fit-content fit-content fit-content fit-content;
+    color: white;
 }
 
 .name {
     grid-column-start: 2;
     grid-column-end: 3;
+    padding: 10px;
+    text-align: left;
 }
 
 .city {
     grid-column-start: 3;
     grid-column-end: 4;
+    padding: 10px;
+    text-align: left;
 }
 .country {
     grid-column-start: 4;
     grid-column-end: 5;
+    padding: 10px;
+    text-align: left;
 }
 .age {
     grid-column-start: 5;
     grid-column-end: 6;
+    padding: 10px;
+    text-align: left;
 }
 .dateAndTime {
     grid-column-start: 6;
     grid-column-end: 7;
     text-align: end;
+    padding: 10px;
+    text-align: left;
 }
 .signersFooter {
-    grid-area: 4/1/5/4s;
+    grid-area: 4/1/5/2;
 }
 
 /**************************************************** ByCity  *****************************************************/
 
 .bycity-body {
-    background-image: url(./assets/support7.jpg);
+    background-image: url(./assets/annie-spratt-g5DkG2ZF7ZY-unsplash.jpg);
     height: 100vh;
     width: 100%;
     background-blend-mode: screen;
     display: grid;
-    grid-template-rows: 40px 15% auto 30px;
-    grid-template-columns: 20% 1fr 20%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .bycity-menu-line {
     background-color: rgba(0, 0, 0, 0.205);
     display: grid;
-    grid-template-columns: 75% auto;
-    grid-area: 1/1/2/5;
+    grid-template-columns: auto auto;
+    grid-area: 1/1/2/2;
     padding: 3px 20px 3px 20px;
 }
 .bycity-home-button {
@@ -724,7 +730,7 @@ p {
 .bycity-menuLinks {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: left;
     align-self: center;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -732,15 +738,16 @@ p {
 
 .bycity-menuLinks a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
+    padding: 10px;
 }
 
 .bycity-wrapper {
-    background-color: rgba(37, 37, 37, 0.623);
+    background-color: rgba(37, 37, 37, 0.31);
     border-radius: 25px;
-    grid-area: 3/ 2/4/3;
+    grid-area: 3/ 1/4/2;
     margin: 0 30px 15px 30px;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     overflow-y: scroll;
@@ -749,31 +756,31 @@ p {
 .bycityTable {
     grid-row-start: 3;
     grid-row-end: 4;
-    color: ivory;
+    color: white;
 }
 
-.bycityFooter {
-    grid-area: 4/1/5/4s;
+.bycity-footer {
+    grid-area: 4/1/5/2;
 }
 
 /**************************************************** ByCountry  *****************************************************/
 
 .bycountry-body {
-    background-image: url(./assets/support7.jpg);
+    background-image: url(./assets/annie-spratt-g5DkG2ZF7ZY-unsplash.jpg);
     height: 100vh;
     width: 100%;
     background-blend-mode: screen;
     display: grid;
-    grid-template-rows: 40px 15% auto 30px;
-    grid-template-columns: 20% 1fr 20%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: auto;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .bycountry-menu-line {
     background-color: rgba(0, 0, 0, 0.205);
     display: grid;
-    grid-template-columns: 75% auto;
-    grid-area: 1/1/2/5;
+    grid-template-columns: auto auto;
+    grid-area: 1/1/2/2;
     padding: 3px 20px 3px 20px;
 }
 .bycountry-home-button {
@@ -792,7 +799,7 @@ p {
 .bycountry-menuLinks {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: left;
     align-self: center;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -800,24 +807,25 @@ p {
 
 .bycountry-menuLinks a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
+    padding: 10px;
 }
 .back {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: underline;
     font-style: italic;
-    grid-area: 2/2/3/3;
+    grid-area: 2/1/3/2;
     align-self: end;
     margin: 0 0 10px 40px;
 }
 .bycountry-wrapper {
-    background-color: rgba(37, 37, 37, 0.623);
+    background-color: rgba(37, 37, 37, 0.31);
     border-radius: 25px;
-    grid-area: 3/ 2/4/3;
+    grid-area: 3/ 1/4/2;
     margin: 0 30px 15px 30px;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     overflow-y: scroll;
@@ -826,11 +834,11 @@ p {
 .bycountryTable {
     grid-row-start: 3;
     grid-row-end: 4;
-    color: ivory;
+    color: white;
 }
 
-.bycountryFooter {
-    grid-area: 4/1/5/4s;
+.bycountry-footer {
+    grid-area: 4/1/5/2;
 }
 
 /**************************************************** Users Profile *****************************************************/
@@ -849,7 +857,6 @@ p {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 40px auto auto auto 30px;
-    height: 100vh;
 }
 .userProfile-menu-line {
     background-color: rgba(0, 0, 0, 0.205);
@@ -882,7 +889,7 @@ p {
 
 .userProfile-menuLinks a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
 }
@@ -892,6 +899,7 @@ p {
     align-self: center;
     justify-self: center;
     grid-area: 2/1/3/2;
+    font-weight: lighter;
 }
 
 .userProfileSection {
@@ -919,7 +927,7 @@ p {
     align-items: center;
     justify-self: flex-start;
     grid-area: 9 / 2 / 10 / 3;
-    border: 1px solid ivory;
+    border: 1px solid white;
     border-radius: 5px;
     background-color: transparent;
     transition: background-color 0.25s ease-in-out;
@@ -945,14 +953,14 @@ p {
     align-self: flex-end;
 }
 .profileUserInput {
-    height: 30px;
+    height: 15px;
     background-color: transparent;
     padding: 3px 10px 3px 10px;
-    font-size: 16px;
-    color: ivory;
-    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    /* font-weight: bold; */
     border: none;
-    border-bottom: 1px solid ivory;
+    border-bottom: 1px solid white;
     margin: 10px 25px 0 30px;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -981,7 +989,7 @@ p {
 
 .return {
     text-decoration: none;
-    color: ivory;
+    color: white;
     font-size: 22px;
     text-decoration: none;
     margin: 10px 25px 0 30px;
@@ -993,7 +1001,7 @@ p {
 }
 .unsign {
     text-decoration: none;
-    color: ivory;
+    color: white;
     font-size: 16px;
     margin: 10px 25px 0 30px;
     align-self: center;
@@ -1016,17 +1024,17 @@ p {
 
 .unsign-wrapper {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    color: ivory;
-    height: 100vh;
+    color: white;
+    min-height: 100vh;
     display: grid;
-    grid-template-rows: 40px auto 30px;
+    grid-template-rows: auto 1fr auto;
     grid-template-columns: auto;
 }
 
 .unsign-menu-line {
     background-color: rgba(0, 0, 0, 0.205);
     display: grid;
-    grid-template-columns: 82% auto;
+    grid-template-columns: auto auto;
     grid-area: 1/1/2/2;
     padding: 3px 20px 3px 20px;
 }
@@ -1046,7 +1054,7 @@ p {
 .unsign-menuLinks {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: left;
     align-self: center;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -1054,16 +1062,17 @@ p {
 
 .unsign-menuLinks a {
     font-size: 18px;
-    color: ivory;
+    color: white;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     text-decoration: none;
+    padding: 0px 10px;
 }
 
 .unsign-section {
     grid-area: 2/1/3/2;
     font-size: 28px;
     font-style: italic;
-    margin-left: 50px;
+    padding: 20px;
     align-self: center;
     justify-self: start;
     text-align: center;
@@ -1071,7 +1080,7 @@ p {
 }
 
 .userSigPic {
-    background-color: rgba(211, 210, 167, 0.342);
+    background-color: rgba(243, 243, 243, 0.62);
     border-radius: 25px;
     padding: 10px;
     height: 80px;
@@ -1079,7 +1088,7 @@ p {
     margin-top: 20px;
 }
 .unsignQ {
-    margin: 30px 0 10px 0;
+    padding: 20px;
     font-size: 18px;
 }
 .unSignBtn {
@@ -1124,20 +1133,518 @@ p {
 
 /**************************************************** Responsive *****************************************************/
 
-@media only screen and (max-width: 768px) {
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 767px) {
+    /* *********************** Signup Responsive ********************** */
+
     .signup-body {
         background-position: center;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
+        width: fit-content;
     }
     .signup-header {
-        font-size: 45px;
+        font-size: 30px;
         padding: 25px 15px;
+    }
+    .purpose {
+        padding: 10px;
+        font-size: 18px;
     }
     .signup-wrapper {
         margin: 10px;
+        height: fit-content;
+        align-self: center;
     }
     .registration-section {
         padding: 0px;
+    }
+    .signUp-input-fields {
+        padding: 10px;
+    }
+    .inputs {
+        grid-template-columns: max-content auto;
+    }
+    .input label {
+        padding: 10px 10px 10px 0;
+        font-size: 15px;
+    }
+    .signUp {
+        width: 120px;
+        font-size: 15px;
+        margin: 22px;
+    }
+    .emailExsists,
+    .logInLink,
+    .alreadyAMember {
+        font-size: 15px;
+    }
+
+    /* *********************** Petition Responsive ********************** */
+
+    .petition-body {
+        background-size: auto;
+        background-position: bottom;
+        background-color: #575352;
+        height: max-content;
+        width: fit-content;
+    }
+    .petition-wrapper {
+        min-height: 100vh;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto auto auto;
+        background-color: rgba(0, 0, 0, 0.32941176470588235);
+    }
+    .petition-menu-line {
+        grid-area: 1/1/2/2;
+        background-color: rgb(29, 26, 26);
+    }
+    .petition-menuLinks a {
+        font-size: 15px;
+    }
+    .hello-name {
+        display: none;
+    }
+    .hello-name-responsive {
+        grid-area: 2/1/3/2;
+        display: block;
+        font-size: 20px;
+        font-style: italic;
+    }
+    .text-section {
+        grid-area: 3/1/4/2;
+    }
+    .signature-section {
+        grid-area: 4/1/5/2;
+    }
+    .sign-this {
+        font-size: 18px;
+    }
+    .submit-button {
+        border: 1px solid rgb(186, 197, 197);
+    }
+    .errorMsg {
+        text-align: center;
+        color: white;
+        background-color: rgba(197, 12, 12, 0.54);
+        margin: 20px;
+    }
+    .alreadySigned {
+        font-size: 17px;
+        grid-area: 2/1/3/2;
+    }
+    .helloUser {
+        font-size: 20px;
+    }
+    .seeAllSigners a {
+        font-size: 17px;
+    }
+    .petitionFooter {
+        grid-area: 5/1/6/2;
+    }
+
+    /* *********************** User Profile Responsive ********************** */
+    .userProfileBody {
+        height: auto;
+        min-width: fit-content;
+    }
+    .userProfileWrapper {
+        grid-template-columns: auto;
+        grid-template-rows: min-content auto auto auto min-content;
+        min-height: 100vh;
+    }
+    .userProfile-menu-line {
+        grid-area: 1/1/2/2;
+        padding: 5px;
+        grid-template-columns: auto auto;
+    }
+    .userProfile-home-button {
+        align-self: center;
+    }
+    .userProfile-home-button img {
+        height: 25px;
+        width: 25px;
+        align-self: center;
+    }
+    .userProfile-menuLinks {
+        justify-content: flex-start;
+    }
+    .userProfile-menuLinks a {
+        font-size: 17px;
+        padding: 5px;
+    }
+    .userProfileHeader {
+        font-size: 28px;
+    }
+    .userProfileSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .editProfileBtn {
+        background-color: rgba(255, 250, 250, 0.76);
+        height: 30px;
+        width: 305px;
+        margin: 10px;
+    }
+    .userProfile-InputFields {
+        padding: 15px;
+    }
+    .profileSubmitBtn {
+        height: 34px;
+        width: 120px;
+        background-color: rgba(255, 255, 255, 0.35);
+        font-size: 16px;
+        margin: 10px;
+        border: 2px solid white;
+    }
+    .return {
+        font-size: 19px;
+        padding: 10px;
+    }
+    .userProfileFooter {
+        padding: 5px;
+    }
+    .footer-text {
+        margin: 0;
+    }
+
+    /* *********************** Thanks Responsive ********************** */
+    .thanks-home-button img {
+        height: 25px;
+        width: 25px;
+    }
+    .thanks-section {
+        font-size: 22px;
+        justify-content: flex-end;
+    }
+    .thanks-userSigPic {
+        width: 285px;
+    }
+    .signers {
+        font-size: 22px;
+        font-style: italic;
+    }
+
+    /* *********************** Unsign Responsive ********************** */
+    .unsign-menuLinks a {
+        font-size: 15px;
+    }
+    .unsign-body {
+        min-width: fit-content;
+        min-height: 100vh;
+        background-position: right;
+    }
+    .unsign-wrapper {
+        min-height: 100vh;
+    }
+    .unsign-section {
+        font-size: 22px;
+    }
+    .userSigPic {
+        background-color: rgba(243, 243, 243, 0.82);
+    }
+    /* *********************** Signers Responsive ********************** */
+    .signers-body {
+        width: max-content;
+        height: auto;
+    }
+    .signers-menuLinks a {
+        font-size: 15px;
+        padding: 5px;
+    }
+    .signers-wrapper {
+        margin: 20px;
+    }
+    .supporters-list {
+        font-size: 22px;
+    }
+
+    /**************************************************** ByCity  *****************************************************/
+    .bycity-menu-line {
+        padding: 3px 10px;
+    }
+    .bycity-menuLinks a {
+        font-size: 15px;
+        padding: 5px;
+    }
+    .bycity-home-button img {
+        height: 25px;
+        width: 25px;
+    }
+    .supporters-list {
+        margin: 30px 0px;
+    }
+    .back {
+        margin: 15px;
+    }
+    .bycity-wrapper {
+        margin: 15px;
+    }
+    .bycityTable {
+        font-size: 13px;
+        padding-left: 20px;
+    }
+    .li {
+        font-size: 15px;
+        grid-template-columns: max-content max-content max-content max-content max-content max-content;
+    }
+    .name,
+    .city,
+    .country,
+    .age {
+        padding: 5px;
+    }
+    /**************************************************** ByCountry  *****************************************************/
+    .bycountry-menu-line {
+        padding: 3px 10px;
+    }
+    .bycountry-menuLinks a {
+        font-size: 15px;
+        padding: 5px;
+    }
+    .bycountry-home-button img {
+        height: 25px;
+        width: 25px;
+    }
+    .supporters-list {
+        margin: 30px 0px;
+    }
+    .back {
+        margin: 15px;
+    }
+    .bycountry-wrapper {
+        margin: 15px;
+    }
+    .bycountryTable {
+        font-size: 13px;
+        padding-left: 20px;
+    }
+    .li {
+        font-size: 15px;
+        grid-template-columns: max-content max-content max-content max-content max-content max-content;
+    }
+    .name,
+    .city,
+    .country,
+    .age {
+        padding: 5px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    /* *********************** Signup Responsive ********************** */
+    .signup-body {
+        grid-template-columns: auto;
+        grid-template-rows: 1fr auto;
+        background-position: bottom;
+    }
+
+    .signup-wrapper {
+        height: fit-content;
+        justify-self: center;
+        align-self: center;
+    }
+    .purpose {
+        padding: 0 40px;
+    }
+    footer {
+        grid-area: 2/ 1 / 3/ 2;
+    }
+
+    /* *********************** Login Responsive ********************** */
+
+    .logInBody {
+        background-position: center;
+    }
+
+    /* *********************** Petition Responsive ********************** */
+
+    .petition-body {
+        background-size: cover;
+        background-position: bottom;
+        background-color: #575352;
+        height: auto;
+        width: fit-content;
+    }
+    .petition-wrapper {
+        /* height: auto; */
+        grid-template-columns: auto;
+        grid-template-rows: auto auto 1fr 1fr auto;
+        background-color: rgba(0, 0, 0, 0.32941176470588235);
+    }
+    .petition-menu-line {
+        grid-area: 1/1/2/2;
+        background-color: rgb(29, 26, 26);
+    }
+    .petition-home-button img {
+        height: 36px;
+        width: 36px;
+    }
+    .petition-menuLinks a {
+        font-size: 24px;
+    }
+    .alreadySigned {
+        font-size: 30px;
+        grid-area: 2/1/3/2;
+    }
+    .helloUser {
+        font-size: 34px;
+    }
+    .seeAllSigners a {
+        font-size: 28px;
+    }
+    .text-section {
+        grid-area: 3/1/4/2;
+    }
+    .the-text {
+        font-size: 22px;
+    }
+    .signature-section {
+        grid-area: 4/1/5/2;
+        /* align-self: flex-start; */
+    }
+    .sign-this {
+        font-size: 26px;
+    }
+    .hello-name {
+        display: none;
+    }
+    .hello-name-responsive {
+        display: block;
+        font-size: 30px;
+        font-style: italic;
+    }
+    .submit-button {
+        border: 1px solid rgb(186, 197, 197);
+        font-size: 24px;
+        width: 200px;
+    }
+    .clear-sig {
+        font-size: 24px;
+        width: 200px;
+    }
+    .errorMsg {
+        text-align: center;
+        color: white;
+        background-color: rgba(197, 12, 12, 0.54);
+        margin: 20px;
+    }
+    .petitionFooter {
+        grid-area: 5/1/6/2;
+    }
+    .footer-text {
+        font-size: 13px;
+        margin: 4px;
+    }
+    /* *********************** User Profile Responsive ********************** */
+    .userProfileBody {
+        height: auto;
+        min-width: fit-content;
+    }
+    .userProfileWrapper {
+        grid-template-columns: auto;
+        grid-template-rows: min-content auto auto auto min-content;
+        min-height: 100vh;
+    }
+    .userProfile-menu-line {
+        grid-area: 1/1/2/2;
+        padding: 10px;
+        grid-template-columns: auto auto;
+    }
+    .userProfile-home-button {
+        align-self: center;
+    }
+    .userProfile-home-button img {
+        height: 25px;
+        width: 25px;
+        align-self: center;
+    }
+    .userProfile-menuLinks {
+        justify-content: flex-start;
+    }
+    .userProfile-menuLinks a {
+        font-size: 22px;
+        padding: 5px;
+    }
+    .userProfileHeader {
+        font-size: 38px;
+    }
+    .userProfileSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .editProfileBtn {
+        background-color: rgba(255, 250, 250, 0.76);
+        height: 30px;
+        width: 305px;
+        margin: 10px;
+        font-size: 18px;
+    }
+    .userProfile-InputFields {
+        padding: 15px;
+    }
+    .userProfile-InputFields label {
+        font-size: 20px;
+    }
+    .profileUserInput {
+        font-size: 16px;
+        /* padding: 10px; */
+    }
+    .profileSubmitBtn {
+        height: 40px;
+        width: 140px;
+        background-color: rgba(255, 255, 255, 0.35);
+        font-size: 22px;
+        margin: 40px;
+        border: 2px solid white;
+    }
+    .return {
+        font-size: 22px;
+        padding: 10px;
+    }
+    .unsign {
+        font-size: 22px;
+    }
+    .userProfileFooter {
+        padding: 10px;
+    }
+    .footer-text {
+        margin: 0;
+    }
+
+    /* *********************** Thanks Responsive ********************** */
+
+    .thanks-menuLinks a {
+        font-size: 24px;
+    }
+    .successfully-signed {
+        font-size: 36px;
+    }
+    .signers {
+        font-size: 36px;
+    }
+    .tellUs a {
+        font-size: 33px;
+        font-style: italic;
+    }
+    /* *********************** Unsign Responsive ********************** */
+
+    .unsign-wrapper {
+        width: auto;
+    }
+    .unsign-body {
+        background-position: top;
+    }
+    .unsign-menuLinks a {
+        font-size: 22px;
+    }
+
+    /* *********************** Signers Responsive ********************** */
+
+    .signers-menuLinks a {
+        font-size: 22px;
     }
 }

@@ -18,35 +18,32 @@
 
 
         <section class="text-section">
-            <p class="The-Story"> The Story...</p>
-            <p>Dalia, 35 years old finance expert who moved from Jordan to Berlin in 2017.</p>
-            Finance in Deutsch is definitely not easy 😎 and it made it hard for her to find a job in finance.
+            {{#unless sigAvailable}}
+            <p class="hello-name-responsive">Hello {{firstName}}! </p><br>
+            {{/unless}}
+            <br><p class="The-Story"> The Story...</p>
+            <p class="the-text">A 35 years old finance expert who moved from the Middle East to Germany in 2017.
+            Finance in Deutsch is definitely not easy 😎 which made it hard for her to find a job in the field of her experties.
 
-            In 2020, Dalia decieded not to stop and give up, but to dump finance and start all over again.
-            She then enrolled in a web development bootcamp.
-            Due to the lack in her tech knowlage, Dalia had to put extra effort to be able to graduate and become
-            a good web developer.<br>
-            On her 3rd week in this bootcamp, and for the purpose of better understanding and extra practice, Dalia
-            watched a YouTube video of how to build a Carousel to solve one of the daily exercises. She coded
-            along, learned
-            extra methods & finally added more code form what she have learned in class.
-            Unfortunately, some days later, Dalia was accused of commiting frogery in copying code and was banned
-            from getting a graduation certificate.<br>
+            In 2020, she decieded not to stop and not give up but to dump finance and to start all over again.
+            She then enrolled into a web development bootcamp, but due to the lack of her tech knowlage, she had to put extra effort to work harder than others.<br>
 
-            This webiste is all done by Dalia, 2 weeks of sleepless nights working with JS, NodeJS, EXPRESS,
-            HANDLEBARS, HTTP Requests, APIs, JQuery, SQL, Testing, HTML & CSS
-            to mkae it as good as possible after
-            only 8 weeks in Tech-World!<br>
+            <br>On her 3rd week in this bootcamp, and for the purpose of better understanding and extra practice, she watched a coding related YouTube video to help her better understand a certain coding method to solve one of the daily exercises. She coded
+            along, learned extra methods & finally added more code form what she have learned in class.
+            Unfortunately, some days later, she was accused of commiting frogery in copying code. She tried explaining over and over again that she was coding along with this youtube coder for the purpose of learning and that she did not copy the code as is, but sadley, there was no cooperation from this academy and she was banned from getting a graduation certificate<br>
             </p>
-            <p class="conclusion"> This Petiton is Dalia's Accredited Certificate!
-            </p>
+            
 
         </section>
 
         {{#unless sigAvailable}}
         <section class="signature-section">
-            <p class="sign-this">Hello {{firstName}}!<br><br>Please sign this petition, as a testimony from you, if you
-                think that Dalia did a good Job!</p>
+            <p class="hello-name">Hello {{firstName}}! <br></p>
+                <br><p class="sign-this">This webiste was built by this lady...
+                <br>Weeks of hard work & sleepless nights...<br>
+                <br>Please sign this petition if you think that she did a good Job!
+                {{!-- <br>This Petiton Will Be Her Accredited Certificate! --}}
+            </p>
 
             <form class="sigForm">
                 <div class="canvas-wrapper">
@@ -57,7 +54,7 @@
                     <canvas class="empty-canvas"></canvas>
                 </div>
 
-                <div class="errorMsg"> Please Sign Here!</div>
+                <div class="errorMsg"> Please sign in the white box before submitting.</div>
 
                 <div class="buttons">
                     <button type="submit" class="submit-button">Submit</button>
@@ -74,18 +71,21 @@
                     <p />
             </div>
             <p>You have signed this petition on: <strong>{{dateFormat ts "DD.MM.YYYY"}}</strong></p>
-            <p><strong>{{usersCount}}</strong> supporters have signed this petition</p>
+            <div>
+                <span class="userCount">{{usersCount}}</span>
+                <span>supporters have signed this petition</span>
+            </div>
             <p class="seeAllSigners"><a href="/signers">See who signed along!</a> </p>
 
         </section>
         {{/if}}
 
+        <footer class="petitionFooter">
+            <p class="footer-text">© 2020 Dalia Abu-Soud</p>
+        </footer>
     </section>
 
 
-    <footer>
-        <p class="footer-text">© 2020 Dalia Abu-Soud</p>
-    </footer>
     </section>
 </div>
 
