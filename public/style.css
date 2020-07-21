@@ -899,6 +899,7 @@ p {
     align-self: center;
     justify-self: center;
     grid-area: 2/1/3/2;
+    font-weight: lighter;
 }
 
 .userProfileSection {
@@ -952,7 +953,7 @@ p {
     align-self: flex-end;
 }
 .profileUserInput {
-    height: 30px;
+    height: 15px;
     background-color: transparent;
     padding: 3px 10px 3px 10px;
     font-size: 14px;
@@ -1534,7 +1535,7 @@ p {
         grid-area: 5/1/6/2;
     }
     .footer-text {
-        font-size: 19px;
+        font-size: 13px;
         margin: 4px;
     }
     /* *********************** User Profile Responsive ********************** */
@@ -1564,7 +1565,7 @@ p {
         justify-content: flex-start;
     }
     .userProfile-menuLinks a {
-        font-size: 24px;
+        font-size: 22px;
         padding: 5px;
     }
     .userProfileHeader {
@@ -1580,28 +1581,28 @@ p {
         height: 30px;
         width: 305px;
         margin: 10px;
-        font-size: 22px;
+        font-size: 18px;
     }
     .userProfile-InputFields {
         padding: 15px;
     }
     .userProfile-InputFields label {
-        font-size: 24px;
+        font-size: 20px;
     }
     .profileUserInput {
-        font-size: 19px;
+        font-size: 16px;
         /* padding: 10px; */
     }
     .profileSubmitBtn {
         height: 40px;
         width: 140px;
         background-color: rgba(255, 255, 255, 0.35);
-        font-size: 26px;
+        font-size: 22px;
         margin: 40px;
         border: 2px solid white;
     }
     .return {
-        font-size: 29px;
+        font-size: 22px;
         padding: 10px;
     }
     .unsign {
