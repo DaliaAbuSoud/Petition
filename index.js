@@ -159,7 +159,7 @@ app.post("/login-api", (req, res) => {
 app.get("/petition", (req, res) => {
     const { userID } = req.session;
 
-    if (userID) {
+    if (req.session.userID) {
         db.getSingleUser(userID)
             .then((singleUserData) => {
                 let sigAvailable;
@@ -216,14 +216,26 @@ app.post("/petition-api", (req, res) => {
 app.get("/thanks", (req, res) => {
     const { userID } = req.session;
     if (userID) {
-        db.getSignature(userID)
-            .then((signatureUrl) => {
-                db.usersCount().then((result) => {
-                    res.render("thanks", {
-                        signatureUrl: signatureUrl,
-                        usersCount: result,
-                    });
-                });
+        db.getSingleUser(req.session.userID)
+            .then((userData) => {
+                console.log("SignatureURL", userData.signatureurl);
+                const SignatureUrl = userData.signatureurl;
+                if (SignatureUrl !== "") {
+                    db.getSignature(userID)
+                        .then((signatureUrl) => {
+                            db.usersCount().then((result) => {
+                                res.render("thanks", {
+                                    signatureUrl: signatureUrl,
+                                    usersCount: result,
+                                });
+                            });
+                        })
+                        .catch((err) => {
+                            console.log("ERROR: ", err);
+                        });
+                } else {
+                    res.redirect("petition");
+                }
             })
             .catch((err) => {
                 console.log("ERROR: ", err);
@@ -237,16 +249,31 @@ app.get("/thanks", (req, res) => {
 
 app.get("/signers", (req, res) => {
     const { userID } = req.session;
+
     if (userID) {
-        db.getUserData()
-            .then((response) => {
-                res.render("signers", {
-                    signersData: response.rows,
-                });
+        db.getSingleUser(req.session.userID)
+            .then((userData) => {
+                console.log("SignatureURL", userData.signatureurl);
+                const SignatureUrl = userData.signatureurl;
+                if (SignatureUrl !== "") {
+                    db.getUserData()
+                        .then((response) => {
+                            res.render("signers", {
+                                signersData: response.rows,
+                            });
+                        })
+                        .catch((err) => {
+                            console.log("ERROR :", err);
+                        });
+                } else {
+                    res.redirect("petition");
+                }
             })
             .catch((err) => {
-                console.log("ERROR :", err);
+                console.log("ERROR: ", err);
             });
+    } else {
+        res.redirect("petition");
     }
 });
 
@@ -254,19 +281,30 @@ app.get("/signers", (req, res) => {
 
 app.get("/bycity/:cityName", (req, res) => {
     const { userID } = req.session;
-
     if (userID) {
-        db.getCityUsersData(req.params.cityName)
-            .then((response) => {
-                console.log("***********RESPONSE CITY", response);
-                res.render("bycity", {
-                    signersData: response,
-                    cityName: req.params.cityName,
-                });
-                console.log("*******RESPONSE: ".signersData);
+        db.getSingleUser(req.session.userID)
+            .then((userData) => {
+                console.log("SignatureURL", userData.signatureurl);
+                const SignatureUrl = userData.signatureurl;
+                if (SignatureUrl !== "") {
+                    db.getCityUsersData(req.params.cityName)
+                        .then((response) => {
+                            console.log("***********RESPONSE CITY", response);
+                            res.render("bycity", {
+                                signersData: response,
+                                cityName: req.params.cityName,
+                            });
+                            console.log("*******RESPONSE: ".signersData);
+                        })
+                        .catch((error) => {
+                            console.log("ERROR: ", error);
+                        });
+                } else {
+                    res.redirect("/petition");
+                }
             })
-            .catch((error) => {
-                console.log("ERROR: ", error);
+            .catch((err) => {
+                console.log("ERROR: ", err);
             });
     }
 });
@@ -277,13 +315,26 @@ app.get("/bycountry/:countryName", (req, res) => {
     const { userID } = req.session;
 
     if (userID) {
-        db.getCountriesUsersData(req.params.countryName)
-            .then((response) => {
-                console.log("***********RESPONSE COUNTRY", response);
-                res.render("bycountry", {
-                    signersData: response,
-                    countryName: req.params.countryName,
-                });
+        db.getSingleUser(req.session.userID)
+            .then((userData) => {
+                console.log("SignatureURL", userData.signatureurl);
+                const SignatureUrl = userData.signatureurl;
+                if (SignatureUrl !== "") {
+                    db.getCountriesUsersData(req.params.countryName).then(
+                        (response) => {
+                            console.log(
+                                "***********RESPONSE COUNTRY",
+                                response
+                            );
+                            res.render("bycountry", {
+                                signersData: response,
+                                countryName: req.params.countryName,
+                            });
+                        }
+                    );
+                } else {
+                    res.redirect("/petition");
+                }
             })
             .catch((error) => {
                 console.log("ERROR: ", error);
@@ -361,20 +412,25 @@ app.post("/userprofile", (req, res) => {
 app.get("/unsign", (req, res) => {
     const { userID } = req.session;
     if (userID) {
-        db.getSignature(userID)
-            .then((signatureUrl) => {
-                res.render("unsign", {
-                    signatureUrl: signatureUrl,
-                });
-            })
-            .catch((err) => {
-                console.log("ERROR: ", err);
-            });
-    } else {
-        res.redirect("signup");
+        db.getSingleUser(req.session.userID).then((userData) => {
+            console.log("SignatureURL", userData.signatureurl);
+            const SignatureUrl = userData.signatureurl;
+            if (SignatureUrl !== "") {
+                db.getSignature(userID)
+                    .then((signatureUrl) => {
+                        res.render("unsign", {
+                            signatureUrl: signatureUrl,
+                        });
+                    })
+                    .catch((err) => {
+                        console.log("ERROR: ", err);
+                    });
+            } else {
+                res.redirect("/petition");
+            }
+        });
     }
 });
-
 app.post("/unsign", (req, res) => {
     const { userID } = req.session;
     const { signatureUrl } = req.body;
